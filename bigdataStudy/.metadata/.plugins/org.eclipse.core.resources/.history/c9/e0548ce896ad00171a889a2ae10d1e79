@@ -1,0 +1,18 @@
+package com.sist.aop2;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Aspect //메모리할당안됨. 공통부분표시
+@Component
+public class MyCommon {
+	@Autowired
+	private MyDataBase db;
+	public void before(){
+		db.getConnection();
+	}
+	public void after(){
+		db.disConnection();
+	}
+}

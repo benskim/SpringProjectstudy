@@ -1,0 +1,49 @@
+package com.sist.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sist.dao.MovieDAO;
+import com.sist.dao.MovieVO;
+import com.sist.naver.NaverManager;
+import com.sist.news.Item;
+import com.sist.news.NewsManager;
+import com.sist.r.RManager;
+
+import java.util.*;
+@Controller
+public class MovieController {
+	@Autowired
+	private MovieDAO dao;
+	@Autowired
+	private RManager rm;
+	@Autowired
+	private NewsManager nm;
+	@Autowired
+	private NaverManager naver;
+	
+	@RequestMapping("movie/main.do")
+	public String movie_main(Model model){//request
+		List<MovieVO> list = dao.movieAllData();
+		
+		List<Item> nlist =nm.newsData();
+		model.addAttribute("nlist",nlist);
+		model.addAttribute("list",list);
+		rm.reserveGraph();
+		return "movie/main";//root
+		
+	}
+	@RequestMapping("movie/detail.do")
+	public String movie_detail(int mno, Model model){//mno 같아야함
+		MovieVO vo =dao.movieDetailData(mno);
+		model.addAttribute("vo",vo);
+		return "movie/detail"; 
+	}
+	
+/*	public static void main(String[] args) {
+	
+	}
+*/
+}

@@ -1,0 +1,8 @@
+package com.sist.mongo;
+
+public class StudentVO {
+	private int hakbun,kor,eng,math,history,phy,chem,total;
+	private String name,subject;
+	private double avg;
+	
+}

@@ -1,0 +1,96 @@
+package com.sist.book;
+
+import java.net.*;
+import java.util.*;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.UnmarshalException;
+import javax.xml.bind.Unmarshaller;
+
+import org.rosuda.REngine.REXP;
+import org.rosuda.REngine.Rserve.RConnection;
+import org.springframework.stereotype.Component;
+
+@Component
+public class BookModel {
+	public static void main(String[] args) {
+		BookModel nm = new BookModel();
+		String[] groupStart = {"2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01"};
+		String start= "2017-01-01";
+		String[] groupEnd = {"2017-01-31","2017-02-28","2017-03-31","2017-04-30","2017-05-31","2017-06-30"};
+		String end= "2017-01-31";
+		int[] groupGender = {0,1};
+		int[] groupAge = {0,6,8,14,20,30,40,50,60};
+		int[] groupKdc = {0,1,2,3,4,5,6,7,8,9};
+		int gender=0;
+		int age=8; 
+		int kdc=1;
+		for( int i=0; i< groupStart.length;i++ ) {
+			start = groupStart[i];
+			end=groupEnd[i];
+			for(int j=0;j<2;j++) {
+				gender=groupGender[j];
+				for(int k=0;k<groupAge.length;k++) {
+					age=groupAge[k];
+					for(int l=0;l<groupKdc.length;l++) {
+						kdc=groupKdc[l];
+						//num+=1;
+						nm.bookData(start,end,gender,age,kdc);
+					}
+				}
+			}
+		}	
+			
+	}
+}
+	
+
+	
+	// spreading data to jsp / webpage through R
+	public String getRData()
+	{
+		String json ="";
+		List<String> list=new ArrayList<String>();
+		try
+		{
+			RConnection rc=new RConnection();
+			//R肄섏넄�엯�젰
+			rc.setStringEncoding("utf8");
+			rc.voidEval("library(rJava)");
+			rc.voidEval("library(KoNLP)");
+			rc.voidEval("news<-readLines(\"c:/data/book.txt\")");
+			//rc.voidEval("news2<-sapply(news,extractNoun,USE.NAMES = F)");
+			//rc.voidEval("news3<-unlist(news2)");
+			//rc.voidEval("news4<-Filter(function(x){nchar(x)>2},news3)");
+//			rc.voidEval("news5<-as.matrix(news4)");//
+			//rc.voidEval("news5<-head(sort(table(news4),decreasing = TRUE),30)");
+			//rc.voidEval("news6<-rownames(as.matrix(news5))");
+			
+		
+			REXP p = rc.eval("news");
+		
+			String[] data = p.asStrings();
+			rc.close();
+			
+			list=Arrays.asList(data);
+			
+			//list.jsp jQuery
+			json="[";
+			for(String s:list) {
+				String encodeResult = URLEncoder.encode(s,"UTF-8");//?
+				System.out.println(encodeResult);				
+				json+="{ label: '"+s+"', url: 'https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query="+encodeResult+"', target: '_top' },";
+			}
+				
+			json=json.substring(0, json.lastIndexOf(","));
+			json+="]";
+			
+		}catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return json;
+	}
+
+	
+}

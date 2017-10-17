@@ -1,0 +1,49 @@
+package com.sist.book;
+
+import java.net.*;
+import java.util.*;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.UnmarshalException;
+import javax.xml.bind.Unmarshaller;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class BookManager {
+	
+	
+	
+	public List<Doc> bookData(){
+		List<Doc> list = new ArrayList<Doc>();
+		try {
+			String key = "f9a9c5d3f3df31dec7e11362dcfd5be83cfb63a1df229f783a4dee29878a260e";
+			
+			String strUrl = "http://data4library.kr/api/loanItemSrch?authKey="+key
+					+ "&startDt="+start+"&endDt="+end+"&gender="+gender+"&age="+age+"&kdc="+kdc;
+			System.out.println(strUrl);	
+			//
+			URL url = new URL(strUrl);
+			JAXBContext jc=JAXBContext.newInstance(Response.class);//root class
+			Unmarshaller un =jc.createUnmarshaller();// <-> object 클래스를 xml로
+			Response rss = (Response)un.unmarshal(url);
+			list=rss.getDocs().getDoc();//.getChannel().getItem();
+			
+			for(Doc i :list) {
+				//System.out.println(i.getTitle());
+				i.setStartDt(start);
+				i.setEndDt(end);
+				i.setGender(gender);
+				i.setAge(age);
+				i.setCategory(kdc);
+				
+				BookDAO.bookInsert(i);
+				
+				System.out.println(i.getBookname());
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		return list;
+	}
+}

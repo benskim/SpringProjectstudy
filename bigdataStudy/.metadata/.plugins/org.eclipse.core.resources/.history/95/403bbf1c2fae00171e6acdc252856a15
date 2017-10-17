@@ -1,0 +1,27 @@
+package com.sist.manager;
+
+import org.springframework.stereotype.Component;
+import java.util.*;
+
+
+@Component
+public class MovieManager {
+/*
+  <div class="box-image" >
+                        <strong class="rank">No.1</strong>	
+                        <a href="/movies/detail-view/?midx=79960">
+ */
+	private List<String> movieLinkData(){
+		List<String> list =new ArrayList<String>();
+		try {
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

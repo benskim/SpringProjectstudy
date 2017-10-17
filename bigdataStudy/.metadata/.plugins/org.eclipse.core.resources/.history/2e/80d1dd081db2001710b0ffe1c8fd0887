@@ -1,0 +1,25 @@
+package com.sist.r;
+
+import org.rosuda.REngine.Rserve.RConnection;
+import org.springframework.stereotype.Component;
+// /home/sist/bigdataDev/bigdataStudy/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/SpringMongoNewsProject/  
+@Component
+public class RManager {
+	public void rGraph(){
+		try {
+			RConnection rc = new RConnection();
+			rc.voidEval("library(KoNLP)");
+			rc.voidEval("library(rJava)");
+			rc.voidEval("library(RMongo)");
+			rc.voidEval("library(stringr)");
+			rc.voidEval("library(plotrix)");
+			rc.voidEval("");
+			rc.voidEval("");
+			rc.voidEval("");
+			rc.voidEval("");
+			rc.close();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}

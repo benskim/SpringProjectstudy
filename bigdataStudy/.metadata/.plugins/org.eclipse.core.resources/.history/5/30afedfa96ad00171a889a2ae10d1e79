@@ -1,0 +1,37 @@
+package com.sist.aop2;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class MyDataBase {
+	//공통관심사 aop
+	public void getConnection(){
+		System.out.println("getConnection");
+	}
+	public void disConnection(){
+		System.out.println("disConnection");
+	}
+	//pattern으로 적용대상 구별
+	public void aopSelect(){
+	
+		System.out.println("select call..");
+	
+	}
+	public void aopinsert(){
+	
+		System.out.println("insert call..");
+	
+	}
+	public void aopdelete(){
+		
+		System.out.println("delete call..");
+		
+	}
+	public void aopupdate(){
+	
+		System.out.println("update call..");
+		
+	}
+	
+	
+}

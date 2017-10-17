@@ -1,0 +1,19 @@
+package com.sist.news;
+/*
+ 하둡							몽고			R
+ 데이터 수집 -> 데이터 분석 -> 데이터 저장 -> 시각화
+ 
+ */
+
+public class Rss {
+	private Channel channel=new Channel();
+
+	public Channel getChannel() {
+		return channel;
+	}
+
+	public void setChannel(Channel channel) {
+		this.channel = channel;
+	}
+	
+}

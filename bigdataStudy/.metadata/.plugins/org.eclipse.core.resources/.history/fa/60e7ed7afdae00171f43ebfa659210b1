@@ -1,0 +1,7 @@
+package com.sist.naver;
+
+public class NaverManager {
+	public void naverBlogData(String data){
+		
+	}
+}

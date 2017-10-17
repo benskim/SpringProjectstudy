@@ -1,0 +1,29 @@
+package com.sist.r;
+
+import org.rosuda.REngine.Rserve.RConnection;
+import org.springframework.stereotype.Component;
+// /home/sist/bigdataDev/bigdataStudy/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/SpringMongoNewsProject/  
+@Component
+public class RManager {
+	public void rGraph(){
+		try {
+			RConnection rc = new RConnection();
+			rc.voidEval("library(KoNLP)");
+			rc.voidEval("library(rJava)");
+			rc.voidEval("library(RMongo)");
+			rc.voidEval("library(stringr)");
+			rc.voidEval("library(plotrix)");
+			rc.voidEval("mongo<-mongoDbConnect(\"mydb\",\"211.238.142.23\",27017)");
+			rc.voidEval("data<-dbGetQuery(mongo,\"news\",\"{}\")");
+			rc.voidEval("data2<-sapply(data$description, extractNoun,USE.NAMES = F)");
+			rc.voidEval("news1<-unlist(data2) ");
+			rc.voidEval("news<-str_replace_all(news1,\"[[^가-힣]]\",\"\")");
+			rc.voidEval("news3<-Filter(function(x){nchar(x)>=2 && nchar(x)<=5},news)");
+			rc.voidEval("");
+			rc.voidEval("");
+			rc.close();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}

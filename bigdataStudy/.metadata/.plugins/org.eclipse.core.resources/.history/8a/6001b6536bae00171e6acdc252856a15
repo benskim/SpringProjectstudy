@@ -1,0 +1,66 @@
+package com.sist.book;
+import java.io.*;
+import java.util.*;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+public class BookDAO {
+
+
+	private static SqlSessionFactory ssf;
+	//newsmodel에서 xml형식의 데이터를 가져왔다.
+	//파싱: xml파일에 저장하기
+	//jdbc: 데이터베이스에 저장하기
+	
+	//1. xml파일에 저장되는 내용을 ssf가 받아온다.
+	static {
+		try {
+			//xml읽어오기 (src아래 있어서 '경로명' 없어도 됨)
+			Reader reader = Resources.getResourceAsReader("Config.xml");
+			ssf=new SqlSessionFactoryBuilder().build(reader); //config.xml정보 넣기: "freeBoardProject_R"참조
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	public static void bookDelete() {
+		SqlSession session = null;
+		try {
+			session=ssf.openSession(true);// autocommit 지정
+			session.delete("bookDelete");//sqlsession이기에 dml함수잇음
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}finally {
+			session.close();
+		}
+	}
+	public static void bookInsert(Doc doc) {
+		SqlSession session = null; //Connection 클래스 역할
+		try {
+			session = ssf.openSession(true);// autocommit 지정
+			session.insert("bookInsert",doc);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}finally {
+			session.close();
+		}
+	}
+	//not yet
+	public static List<Doc> BookAllData(Map map) {
+		List<Doc> list = new ArrayList<Doc>();
+		SqlSession session = null; //Connection 클래스 역할
+		try {
+			session = ssf.openSession();
+			list=session.selectList("bookAllData",map);
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}finally {
+			session.close();
+		}
+		return list;
+	}
+
+
+}

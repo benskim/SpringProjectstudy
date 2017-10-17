@@ -1,0 +1,14 @@
+package com.sist.news;
+
+public class Rss {
+	private Channel channel=new Channel();
+
+	public Channel getChannel() {
+		return channel;
+	}
+
+	public void setChannel(Channel channel) {
+		this.channel = channel;
+	}
+	
+}

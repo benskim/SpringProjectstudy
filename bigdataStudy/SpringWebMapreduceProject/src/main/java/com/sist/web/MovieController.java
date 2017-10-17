@@ -1,0 +1,104 @@
+package com.sist.web;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.hadoop.mapreduce.JobRunner;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sist.dao.MovieDAO;
+import com.sist.dao.MovieVO;
+import com.sist.naver.NaverManager;
+import com.sist.news.Item;
+import com.sist.news.NewsManager;
+import com.sist.r.RManager;
+
+import java.util.*;
+@Controller
+public class MovieController {
+	@Autowired
+	private MovieDAO dao;
+	@Autowired
+	private RManager rm;
+	@Autowired
+	private NewsManager nm;
+	@Autowired
+	private NaverManager naver;
+	@Autowired
+	private Configuration conf;
+	@Autowired
+	private JobRunner jr;
+	@RequestMapping("movie/main.do")
+	public String movie_main(Model model){//request
+		List<MovieVO> list = dao.movieAllData();
+		
+		List<Item> nlist =nm.newsData();
+		model.addAttribute("nlist",nlist);
+		model.addAttribute("list",list);
+		rm.reserveGraph();		
+		return "movie/main";//root
+		
+	}
+	@RequestMapping("movie/detail.do")
+	public String movie_detail(int mno, Model model){//mno 같아야함
+		//getdata from mongo(기존) and naver(실시간)
+		MovieVO vo =dao.movieDetailData(mno);
+		naver.naverBlogData(vo.getTitle());
+		naver.naverReplyData();
+		//aop- before
+		hadoopFileDelete();
+		copyFromLocal();
+		//run mapreduce-jr.call (autowired)
+		 try {
+			jr.call(); 
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		//aop-after
+		copyToLocal();
+		//r 
+		rm.feelGraph();
+		rm.wordCloud();
+		model.addAttribute("vo",vo);
+		return "movie/detail"; 
+	}
+	public void hadoopFileDelete(){
+		try {
+		//Hadoop conn//config.xml
+			FileSystem fs = FileSystem.get(conf);
+			if(fs.exists(new Path("/input1/naver.txt"))){
+				fs.delete(new Path("/input1/naver.txt"), true);
+				
+			}
+			if(fs.exists(new Path("/output1"))){
+				fs.delete(new Path("/output1"), true);
+				
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	public void copyFromLocal(){
+		try {
+			FileSystem fs=FileSystem.get(conf);
+			fs.copyFromLocalFile(new Path("/home/sist/movie_data/naver.txt"), new Path("/input1/naver.txt"));
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	public void copyToLocal(){
+		try {
+			FileSystem fs=FileSystem.get(conf);
+			fs.copyToLocalFile(new Path("/output1/part-r-00000"), new Path("/home/sist/movie_data/result"));
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+/*	public static void main(String[] args) {
+	
+	}
+*/
+}

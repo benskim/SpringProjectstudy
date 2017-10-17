@@ -1,0 +1,31 @@
+package com.sist.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sist.dao.MovieDAO;
+import com.sist.dao.MovieVO;
+import com.sist.r.RManager;
+
+import java.util.*;
+@Controller
+public class MovieController {
+	@Autowired
+	private MovieDAO dao;
+	@Autowired
+	private RManager rm;
+	@RequestMapping("movie/main.do")
+	public String movie_main(Model model){//request
+		List<MovieVO> list = dao.movieAllData();
+		model.addAttribute("list",list);
+		rm.reserveGraph();
+		return "movie/main";//root
+		
+	}
+	public static void main(String[] args) {
+	
+	}
+
+}

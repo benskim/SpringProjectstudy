@@ -1,0 +1,14 @@
+package com.sist.mapred;
+
+import org.apache.hadoop.conf.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MainClass {
+	@Autowired
+	private Configuration conf;
+	public static void main(String[] args){
+		
+	}
+}

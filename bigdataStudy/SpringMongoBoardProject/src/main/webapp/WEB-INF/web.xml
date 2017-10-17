@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+<!-- Controller 등록 -->
+  <servlet>
+    <servlet-name>mapred</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>/WEB-INF/config/application-*.xml</param-value>
+    </init-param>
+    <!-- 
+         1) tomcat => web.xml 읽기
+           2)등록된 servlet 구동 
+           3) XML을 전송 => DispatcherServlet
+           스프링
+           ======
+           1) 경량 컨테이터 
+              : 관계도가 단순하다 
+              : 프로그램이 클래스로 만들어서 가볍다 
+           2) 클래스를 모아서 관리 
+              = 생성 , 소멸 ( 객체 생명 주기 )
+                ====
+                필요한 데이터를 전송 (DI)
+              DI
+                 = Setter DI
+                 = Constructor DI
+                 = Method DI (생성시(init-method),
+                      소멸시(destory-method))
+              AOP
+                    = 중복된 코딩을 제거 (자동호출)
+                    = 프록시패턴 (대리자)
+                    
+                void display()
+                   {
+                      //연결
+                      데이터베이스 찾기
+                      //닫기
+                   }
+                   
+                 void display()
+                   {
+                      연결
+                      데이터베이스 찾기
+                      닫기
+                   }
+                   
+                AOP
+                    => 어떤 메소드 : pointcut
+                    => 위치가 어디냐 : joinpoint
+                    ============================== Advice
+                    
+                       void display()
+                          {
+                              @Before
+                              try
+                                   {
+                                ========= @Around setAutoCommit(false)
+                                      핵심내용
+                                ========= @ commit
+                              }catch(Exception ex)
+                                   {
+                                 @After-Throwing rollback
+                                   }
+                              finally
+                                   {
+                                 @After disconnection()
+                                   }
+                              @After-Returning
+                          }
+                    
+     -->
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>mapred</servlet-name>
+     <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <!-- 한글변환  -->
+  <filter> 
+		<filter-name>encodingFilter</filter-name> 
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
+		<init-param> 
+			<param-name>encoding</param-name> 
+			<param-value>UTF-8</param-value> 
+       </init-param> 
+  </filter>
+  <filter-mapping>
+	<filter-name>encodingFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+</web-app>

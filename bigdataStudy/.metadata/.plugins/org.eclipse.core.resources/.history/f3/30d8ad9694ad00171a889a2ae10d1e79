@@ -1,0 +1,7 @@
+package com.sist.aop;
+
+public class MyDataBase {
+	public void getConnection(){
+		
+	}
+}

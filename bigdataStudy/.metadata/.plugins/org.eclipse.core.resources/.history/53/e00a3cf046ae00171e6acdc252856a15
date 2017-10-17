@@ -1,0 +1,74 @@
+package com.sist.dao;
+
+import java.net.InetSocketAddress;
+
+import org.springframework.stereotype.Repository;
+
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.MongoClient;
+import com.mongodb.ServerAddress;
+import java.util.*;
+
+@Repository
+public class MovieDAO {
+	private MongoClient mc; //connection
+	private DB db; 			  //ORCL
+	private DBCollection dbc;//table
+
+	public MovieDAO(){
+		try {
+			mc = new MongoClient(new ServerAddress(new InetSocketAddress("211.238.142.23", 27017)));
+//			port 변경가능 : sudo nano mongodb.conf
+//			mc = new MongoClient(localhost, 1521 - oracle);
+			db=mc.getDB("mydb"); //database
+			dbc=db.getCollection("movie"); //create table movie
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	
+	public void movieInsert(MovieVO vo){
+		try {
+//			json type : insert({no:1,...}) 의 {}을 만들어준다.
+			BasicDBObject obj= new BasicDBObject();
+//			put {key, value} 입력순서 = 컬럼순서
+			obj.put("mno", vo.getMno());
+			obj.put("title", vo.getTitle());
+			obj.put("poster", vo.getPoster());
+			obj.put("director", vo.getDirector());
+			obj.put("actor", vo.getActor());
+			obj.put("genre", vo.getGenre());
+			obj.put("grade", vo.getGrade());
+			obj.put("reserve", vo.getReserve());
+			
+			dbc.insert(obj);
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	public List<MovieVO> movieAllData(){
+		List<MovieVO> list = new ArrayList<MovieVO>();
+		try {
+			//select * from movie orderby mno asc;
+			//-1 : desc , 1: asc
+			DBCursor cursor = dbc.find().sort(new BasicDBObject("mno",1));
+			while(cursor.hasNext()){
+				BasicDBObject obj = (BasicDBObject)cursor.next();
+				MovieVO vo = new MovieVO();
+				vo.setMno(obj.getInt("mno"));
+				vo.setTitle(obj.getString("title"));
+				
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return list;
+	}
+}

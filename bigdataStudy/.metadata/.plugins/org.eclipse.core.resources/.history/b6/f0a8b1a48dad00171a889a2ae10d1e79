@@ -1,0 +1,63 @@
+package com.sist.bigdata;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.rosuda.REngine.Rserve.RConnection;
+
+import java.io.*;
+public class MainClass {
+	public static void main(String[] args){
+		try
+		{
+			File dir=new File("./output");
+			if(dir.exists())
+			{
+			File[] files=dir.listFiles();
+			for(File f:files)
+			{
+				f.delete();
+			}
+			dir.delete();
+			}
+			//하둡
+			Configuration conf=new Configuration();
+			//conf.set("fs.default.name", "hdfs://NameNode:9000");
+			Job job=Job.getInstance(conf);
+			job.setMapperClass(WordMapper.class);
+			job.setReducerClass(WordReducer.class);
+			job.setJarByClass(MainClass.class); //실행
+			
+			job.setOutputKeyClass(Text.class);
+			job.setOutputValueClass(IntWritable.class);
+			
+			FileInputFormat.addInputPath(job, new Path("./user/input/word1"));
+			FileOutputFormat.setOutputPath(job, new Path("./output"));
+			job.waitForCompletion(true);
+			
+			//view();
+		}catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+	}
+	public static void view()
+	{
+		try
+		{
+			RConnection rc=new RConnection();
+			rc.voidEval("data<-read.table(\"/home/sist/bigdataDev/bigdataStudy/SpringBigDataProject1/output/part-r-00000\")");
+			rc.voidEval("png(\"/home/sist/word.png\")");
+			rc.voidEval("barplot(data$V2,names.arg=data$V1,col=rainbow(10))");
+			rc.voidEval("dev.off()");
+			rc.close();
+		}catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+	}
+}

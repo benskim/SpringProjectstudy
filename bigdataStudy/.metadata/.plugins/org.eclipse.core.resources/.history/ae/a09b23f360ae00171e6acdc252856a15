@@ -1,0 +1,18 @@
+package com.sist.news;
+
+import java.net.URLEncoder;
+import java.util.*;
+
+public class NewsManager {
+	public List<Item> newsData(){
+		List<Item> list = new ArrayList<Item>();
+		try {
+			String data="data";
+			String strUrl="http://newssearch.naver.com/search.naver?where=rss&query="
+			+URLEncoder.encode(data,"UTF-8");
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return list;
+	}
+}

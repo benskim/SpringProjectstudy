@@ -1,0 +1,14 @@
+package com.sist.mapred;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+/*
+ * 1. read a book
+ * 2. write a book => LongWritable Text
+ */
+public class MovieMapper extends Mapper<LongWritable,	Text, Text, IntWritable>{
+	
+	
+}

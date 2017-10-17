@@ -1,0 +1,12 @@
+package com.sist.manager;
+
+import com.sist.dao;
+
+public class MovieController {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MovieVO vo = dao.movied
+	}
+
+}

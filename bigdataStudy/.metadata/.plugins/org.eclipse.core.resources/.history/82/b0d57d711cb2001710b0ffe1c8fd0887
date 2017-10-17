@@ -1,0 +1,14 @@
+package com.sist.r;
+
+import org.springframework.stereotype.Component;
+// /home/sist/bigdataDev/bigdataStudy/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/SpringMongoNewsProject/  
+@Component
+public class RManager {
+	public void rGraph(){
+		try {
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}

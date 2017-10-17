@@ -1,0 +1,8 @@
+package com.sist.mapred;
+
+import org.apache.hadoop.io.*;
+import org.apache.hadoop.mapreduce.Reducer;
+
+public class MovieReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+
+}

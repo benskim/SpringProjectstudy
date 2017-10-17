@@ -1,0 +1,6 @@
+package com.sist.naver;
+
+public class Item {
+private String description;
+
+}

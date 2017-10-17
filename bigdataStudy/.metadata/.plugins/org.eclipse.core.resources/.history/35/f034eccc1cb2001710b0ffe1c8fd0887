@@ -1,0 +1,15 @@
+package com.sist.r;
+
+import org.rosuda.REngine.Rserve.RConnection;
+import org.springframework.stereotype.Component;
+// /home/sist/bigdataDev/bigdataStudy/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/SpringMongoNewsProject/  
+@Component
+public class RManager {
+	public void rGraph(){
+		try {
+			RConnection rc = new RConnection();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}

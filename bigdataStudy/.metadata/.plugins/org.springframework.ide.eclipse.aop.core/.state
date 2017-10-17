@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="BookRentProject"/>
+<aop-project name="SpringWebMapreduceProject"/>
+<aop-project name="SpringMapReduceProject"/>
+<aop-project name="SpringMongoNewsProject"/>
+<aop-project name="SpringBigDataProject1"/>
+<aop-project name="SpringMongoBoardProject"/>
+<aop-project name="SpringMongoGraphProject"/>
+</aop-reference-model>
