@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="Keywords" content="웹표준, html5, css3, 웹 접근성">
+<meta name="Description" content="웹표준을 기반으로 한 HTML5 수업">
+<title>layout6 - Fluid</title>
+<style>
+
+
+
+	* {margin:0; padding:0;}
+ 	#wrap {width:960px; margin:0 auto;}
+	#box1 {width:30%; height:700px; background-color:#fa9ecd; float:left;}
+	#box2 {width:70%; height:350px; background-color:#52be7f; float:left;}
+	#box3 {width:70%; height:350px; background-color:#a5e064; float:left;}
+	
+	/* 화면 너비 0픽셀 ~ 960픽셀 이상 */
+	@media screen and (max-width:960px) {
+	    #wrap {width:95%;}
+	}
+	/* 화면 너비 0픽셀 ~ 768픽셀 이상 */
+	@media screen and (max-width:768px) {
+	    #wrap {width:100%;}
+		#box1 {float:none; width:100%; height:200px;}
+		#box2 {float:none; width:100%;}
+		#box3 {float:none; width:100%;}
+	}
+	/* 화면 너비 0픽셀 ~ 480픽셀 이상 */
+	@media screen and (max-width:480px) {
+	    
+	}
+
+
+</style>
+</head>
+
+<body>
+
+<div id="wrap">
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+</div>
+
+
+</body>
+</html>

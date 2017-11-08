@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+
+<aop:aspectj-autoproxy/>
+<!-- OOP 객체지향
+-절차지향과의 차이점
+1. 재사용,반복수행 : method
+   관련기능(메소드)을 묶으면 클래스
+*메소드를 만드는 시점: 반복,재사용
+*메소드 자동호출기능 : AOP
+ -->
+<!-- AOP  vs OOP -->
+<!-- 반복수행 기능/자동호출
+joinpoint(호출시기를 지정하는 어노테이션) 
+@Before			  : front of try 
+@After				 : finally
+@After-Returning : return
+@After-Throwing  : catch
+@Around
+
+프로그램/관점지향적 프로그램/aspect oriented programe
+- 공통수행 모듈 : get/disconnection - 공통관심
+- 핵심수행 모듈 : insert/...			  - 핵심관심
+
+*메소드<모듈<컴포넌트(클래스)<컨테이너
+*추상화: 핵심공통속성을 단순화하는 것
+
+1.point cut : method 찾기
+2.joinpoint : method 호출시점 찾기
+3.advice : pointcut+joinpoint
+
+-->
+<context:annotation-config/>
+<!--di: 주입한다 /초기화한다: 객체생성하고 동작할 수 있게 초기기반을 잡는 것  -->
+<context:component-scan base-package="com.sist.*"/>
+<!-- Container컨테이너; 데이터 관리(메모리할당) 
+				com.sist.안에 들어가는 모든 클래스(컴포넌트)를 관리한다
+ -->
+ 
+ <bean id="viewResolver" 
+ class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+ p:prefix="/" p:suffix=".jsp"
+  />
+ <!--  mvc, jsp찾기(prefix)-->
+</beans>

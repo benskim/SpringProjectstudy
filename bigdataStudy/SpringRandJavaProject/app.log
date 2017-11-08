@@ -1,0 +1,915 @@
+
+2017-10-19 12:45:28,267
+INFO : twitter4j.SLF4JLogger.info(SLF4JLogger.java:62)
+Establishing connection.
+
+
+2017-10-19 12:45:29,692
+INFO : twitter4j.SLF4JLogger.info(SLF4JLogger.java:62)
+Connection established.
+
+
+2017-10-19 12:45:29,692
+INFO : twitter4j.SLF4JLogger.info(SLF4JLogger.java:62)
+Receiving status stream.
+
+
+2017-10-19 12:50:27,615
+INFO : twitter4j.SLF4JLogger.info(SLF4JLogger.java:62)
+Establishing connection.
+
+
+2017-10-19 12:50:30,934
+INFO : twitter4j.SLF4JLogger.info(SLF4JLogger.java:62)
+Connection established.
+
+
+2017-10-19 12:50:30,934
+INFO : twitter4j.SLF4JLogger.info(SLF4JLogger.java:62)
+Receiving status stream.
+
+
+2017-10-19 12:50:30,949
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다" | 다음 뉴스 https://t.co/u3Um1A4XAL
+
+
+2017-10-19 12:50:50,503
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @justeeeeth: 지오스톰 후기 : 
+아마겟돈, 2012, 그래비티 등등 각종 재난 영화를 합쳐서 1시간 50분으로 줄여놓음
+내용은 좀 뻔함
+위의 영화들을 다 보셨다면 딱히 안봐도 상관없을듯
+
+
+2017-10-19 14:05:03,823
+INFO : twitter4j.SLF4JLogger.info(SLF4JLogger.java:62)
+Establishing connection.
+
+
+2017-10-19 14:05:11,952
+INFO : twitter4j.SLF4JLogger.info(SLF4JLogger.java:62)
+Connection established.
+
+
+2017-10-19 14:05:11,952
+INFO : twitter4j.SLF4JLogger.info(SLF4JLogger.java:62)
+Receiving status stream.
+
+
+2017-10-19 14:05:12,141
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @daknews10: 닥503 무기징역
+사면 금지✔
+
+국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다" 
+
+"탄원서 낼 사람은 朴 아닌 일반제소자"
+ https://t.co/WYUtoUXtco
+
+
+2017-10-19 14:05:12,302
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:05:17,173
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:05:17,856
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @tinabal70: [국감] 국감장 바닥에 드러누운 노회찬 의원 https://t.co/CjFyBcEAFk 정치 외면을 관심으로 만들어주시는 재주를 가지신 의원님!
+
+
+2017-10-19 14:05:19,280
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다" | 포토뷰어 https://t.co/LmpKyRPLf7
+
+드뎌 으원님 국회에서 누워 버리셨어 ㅋㅋ
+
+
+2017-10-19 14:05:22,129
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+백날 고문 안했다고 해봐야 안한게 되나. 왕을 왜 백성과 비교하노. 왕은 왕끼리 비교해야지. 노태우 처럼 6평 주라고. 노태우도 밤에 소등 안했냐? 확인해봐. 침대 없었냐? 확인해보고. 국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다"
+
+
+2017-10-19 14:05:22,396
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @hcroh: [오마이포토] 국감장에 신문지깔고 드러누운 노회찬  https://t.co/PEVr7nK3Mq
+
+
+2017-10-19 14:05:22,400
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+노회찬 국감장에서 신문깔고 누워버림 ㅋㅋㅋ
+
+
+2017-10-19 14:05:32,651
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:05:35,265
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT부탁드려요)
+정가이하로 양도할게요! 6000원 입니다ㅠㅠㅠㅠ
+제발 받아가주세요ㅠㅠㅠㅠㅠㅠㅠㅜㅜㅜㅜㅜㅜㅜㅜ https://t.co/KrH8uybDhU
+
+
+2017-10-19 14:05:37,350
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @hcroh: [오마이포토] 국감장에 신문지깔고 드러누운 노회찬  https://t.co/PEVr7nK3Mq
+
+
+2017-10-19 14:05:41,245
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+타이거우즈 김세영 LPGA 신지애 이보미 김시우 장하나 골프존 전인지 골프 리디아고 김효주 골프장 골프자세 골프 유소연 이민지 최나연 배상문 수입자동차 jlpga 헬스 골프장예약 김하늘 골프부킹 PGA 골프여행사 박인비 박세리 KLPGA 이수민 최경주
+
+
+2017-10-19 14:05:45,491
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @dakishimete5896: 부산 에이즈 감염 여성 ＂피임기구 없이 10~20번 성매매＂ (출처 : 한국경제 | 네이버 뉴스) https://t.co/Uw1N0yb7ey
+
+지적장애 2급 장애 가진 여성이고 남자친구가 성매매 알선함;;;
+
+
+2017-10-19 14:05:59,688
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+노회찬 이양반은 직접 나서서 그네 정곡을 찌른다 https://t.co/5YL9ctDYmJ
+
+
+2017-10-19 14:06:04,746
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @seojuho: 노회찬 정의당 원내대표 "서울구치소 제소자 1인당 수용면적은 1.06㎡"라며 "알기 쉽게 계산을 해보면 신문 2장 반인데 보여주겠다" "인권침해라고 해야 하는 사람은 박 전 대통령이 아니라 현재 수용자들" https://t.c…
+
+
+2017-10-19 14:06:20,468
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @jjstopper: RT @ohmynews_korea 노회찬 "박근혜, 8월에 이미 조기출소 프로젝트 가동" #노회찬 #박근혜 #CNN #인권침해 #조기석방 이주연 기자 https://t.co/ncs9hAlz56
+
+
+2017-10-19 14:06:20,729
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @jjstopper: 노회찬 “박근혜 인권침해? 구치소 안 고친 책임은 본인” https://t.co/7CEhdBaG5V
+
+
+2017-10-19 14:06:27,888
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @RS26rubezh: 노회찬 이양반은 직접 나서서 그네 정곡을 찌른다 https://t.co/5YL9ctDYmJ
+
+
+2017-10-19 14:06:31,185
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @ITREVI97: RT부탁드려요)
+정가이하로 양도할게요! 6000원 입니다ㅠㅠㅠㅠ
+제발 받아가주세요ㅠㅠㅠㅠㅠㅠㅠㅜㅜㅜㅜㅜㅜㅜㅜ https://t.co/KrH8uybDhU
+
+
+2017-10-19 14:06:35,654
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+실검1위 부산 에이즈 뭐임ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+
+
+2017-10-19 14:06:36,448
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @jjstopper: 국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다" https://t.co/p3fRrPekb1 @뉴스1 님이 공유
+
+
+2017-10-19 14:06:39,657
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @SBS8news: '그림 대작' 사건으로 재판에 넘겨져 1심에서 사기 유죄가 인정돼 징역형의 집행유예를 선고받은 가수 조영남 씨가 판결에 불복해 항소했습니다.
+https://t.co/grFwdVdCgg
+
+
+2017-10-19 14:06:45,087
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:06:45,489
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @newsvop: 노회찬  “박근혜 국제법률팀 변호사는 독재자 변호해 온 인물”@newsvop https://t.co/LOGWO6tYvC
+
+
+2017-10-19 14:06:47,895
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+[오마이포토] 국감장에 신문지깔고 드러누운 노회찬 | 다음뉴스 https://t.co/Ys1qyKWWxp
+
+
+2017-10-19 14:06:52,951
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @jschue1: 국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다"https://t.co/SYqqFNQYZf "서울구치소 제소자 1인당 수용면적은 1.06㎡으로 신문지 두장 반.. 박근혜가 수용된 거실은 10.08㎡으로… 
+
+
+2017-10-19 14:06:53,543
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+노회찬은 됐고 노회찬 선택적 빙의된 민주당의원 가지고 싶다
+
+
+2017-10-19 14:06:57,277
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @JCheolhwan: 👏👏👏👏👏👏
+국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다" https://t.co/5XN96Lo9vj
+
+
+2017-10-19 14:07:14,575
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @daknews10: 닥503 무기징역
+사면 금지✔
+
+국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다" 
+
+"탄원서 낼 사람은 朴 아닌 일반제소자"
+ https://t.co/WYUtoUXtco
+
+
+2017-10-19 14:07:16,391
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다" | 다음뉴스 https://t.co/ELf1JAhjxK
+
+
+2017-10-19 14:07:18,271
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @hcroh: [오마이포토] 국감장에 신문지깔고 드러누운 노회찬  https://t.co/PEVr7nK3Mq
+
+
+2017-10-19 14:07:21,889
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+국감장에 누운 노회찬 ＂朴인권침해? 제가 누워보겠다＂ (출처 : 뉴스1 | 네이버 뉴스) https://t.co/514sOrydHT
+
+
+2017-10-19 14:07:24,175
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @k_aquinas: 지금 방송에서 조영남 유죄 소식 내보내고는 마무리 노래가 모란동백. “이 노래는 조영남씨가 자기 장례식에서 들려주길 원한 노래로서”... 
+
+야 잠깐, 이런식으로 보내는 거얔ㅋㅋㅋㅋ?
+
+
+2017-10-19 14:07:26,887
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+노회찬 의원의 살신성인
+https://t.co/gabcFZUOGp
+
+모두의 뉴스앱 https://t.co/nTa5kYEz4C https://t.co/YFynWbJdNi
+
+
+2017-10-19 14:07:27,317
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+와 진심 오늘 2시부터 신설동 유령역 체험신청을 받길래
+미친듯이 기달려서 2명신청하고 싶었는데..
+역시나 사람들이 몰려서... 나..혼자 1명으로 신청했다...
+킄..ㅠ
+
+
+2017-10-19 14:07:55,294
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+국감 도중 바닥에 드러누운 노회찬 의원님 영상 ㅋㅋ 박근혜 인권침해? 진짜 수용자 과밀상태를 재현하심 ㅋㅋ
+
+https://t.co/DNZ9T4S9VX
+
+
+2017-10-19 14:08:03,173
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @jschue1: 국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다"https://t.co/SYqqFNQYZf "서울구치소 제소자 1인당 수용면적은 1.06㎡으로 신문지 두장 반.. 박근혜가 수용된 거실은 10.08㎡으로… 
+
+
+2017-10-19 14:08:07,660
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @seojuho: 노회찬 정의당 원내대표 "서울구치소 제소자 1인당 수용면적은 1.06㎡"라며 "알기 쉽게 계산을 해보면 신문 2장 반인데 보여주겠다" "인권침해라고 해야 하는 사람은 박 전 대통령이 아니라 현재 수용자들" https://t.c…
+
+
+2017-10-19 14:08:12,164
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:08:14,057
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @hcroh: [오마이포토] 국감장에 신문지깔고 드러누운 노회찬  https://t.co/PEVr7nK3Mq
+
+
+2017-10-19 14:08:17,217
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+부산 에이즈 여성, 7년 전에도 감염 사실 숨기고 성매매 | 다음뉴스 https://t.co/OqiwTa7VOX
+
+
+2017-10-19 14:08:27,757
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @RS26rubezh: 노회찬 이양반은 직접 나서서 그네 정곡을 찌른다 https://t.co/5YL9ctDYmJ
+
+
+2017-10-19 14:08:30,407
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+부산 에이즈 성매매..네티즌 "에이즈로 돈벌고..세상에.." | 다음뉴스 https://t.co/G2CWIkn7AV
+
+
+2017-10-19 14:08:35,751
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+부산 에이즈 감염 여성 성매매 논란..에이즈 증상은? | 다음뉴스 https://t.co/2k6lFTp5F5
+
+
+2017-10-19 14:08:38,179
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:08:42,258
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @ShawnKim21: 노회찬 "참으로 기괴..朴, 자기 얼굴에 침뱉고 있다" | 다음뉴스 https://t.co/4zKOcbtMM9
+푸하하하~ UN인권위?  이건 김정은이가 트럼프한테 인권침해 당했다고해도 똑 같은거~  넘넘 웃껴서 배 터질것…
+
+
+2017-10-19 14:09:00,804
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @hcroh: 노회찬 "참으로 기괴..朴, 자기 얼굴에 침뱉고 있다"    https://t.co/pqlBRZ9ptw
+
+
+2017-10-19 14:09:16,318
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:09:19,471
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+‘신설동 유령역’부터 ‘벙커’까지…잠들었던 비밀 공간 시민에 개방
+https://t.co/nVnpx1ZJQ9
+#부산에이즈 #조영남 #에이즈 #신설동 #한끼줍쇼 #병원선 #유령역 #지오스톰 #부산 #대장김창수
+
+
+2017-10-19 14:09:31,221
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @newsvop: 노회찬  “박근혜 국제법률팀 변호사는 독재자 변호해 온 인물”@newsvop https://t.co/LOGWO6tYvC
+
+
+2017-10-19 14:09:35,272
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @VerryBerry01: 아니 성매매 노콘섹스로 에이즈 감염 됐다는데 여기서 동성애는 왜 나와 ㅋㅋㅋㅋ 에이즈 가장 큰 원인은 노콘 성매매충이지
+
+부산 에이즈 감염 20대 상습 성매매...에이즈 증상은? "감기 몸살과 비슷"
+ https://…
+
+
+2017-10-19 14:09:41,568
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+서울시 시민이 몇명인데.. 고작 1일 4회차로... 그것도 1회차당 20명씩?? 장난하십니까.... 2시 되자마자 서버 ... RT @seoulmania 신설동 유령역 시민체험 예약안내 #서울시 https://t.co/5WYDgKJJLQ
+
+
+2017-10-19 14:09:43,429
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @hanitweet: 노회찬 “박근혜 인권침해? 구치소 안 고친 책임 본인한테 있어”
+https://t.co/PxH8bmh4tZ https://t.co/57MHZCqarp
+
+
+2017-10-19 14:09:48,274
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+국감장에 누운 노회찬
+"朴인권침해? 제가 누워보겠다" https://t.co/DIyHoO2AWE
+
+쓸데없는 신소리 그만듣자!
+그냥 일반 재소자 강력범방
+다인실에 당장 처 넣어라!
+
+신문지 2장반 만큼의 공간에서
+잠 처자봐야..
+황제수감 하는 주제에!
+
+
+2017-10-19 14:10:01,768
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:10:03,292
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @1mg71001: 부산 에이즈 "나 지금 떨고 있니?" 공포에 휩싸인 남성들 | 다음뉴스 https://t.co/6IMLR4Wpjp
+
+
+2017-10-19 14:10:05,069
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @bunncartman: 노회찬은 됐고 노회찬 선택적 빙의된 민주당의원 가지고 싶다
+
+
+2017-10-19 14:10:08,809
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+조영남 1심 유죄..판매한 그림 어떻게 되나? | 다음뉴스 https://t.co/vll4xwaavG
+
+
+2017-10-19 14:10:16,228
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @gajuknamu: 국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다" https://t.co/SLbwb3PpDa노회찬 짱 !!
+503호는 인권이 뭔지 안답니까 ?
+그런데 
+다스는 누구껍니까 ?
+
+
+2017-10-19 14:10:20,887
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @moonlover333: 국감장에 누운 노회찬
+"朴인권침해? 제가 누워보겠다" https://t.co/DIyHoO2AWE
+
+쓸데없는 신소리 그만듣자!
+그냥 일반 재소자 강력범방
+다인실에 당장 처 넣어라!
+
+신문지 2장반 만큼의 공간에서
+잠 처…
+
+
+2017-10-19 14:10:22,155
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @seojuho: 노회찬 정의당 원내대표 "서울구치소 제소자 1인당 수용면적은 1.06㎡"라며 "알기 쉽게 계산을 해보면 신문 2장 반인데 보여주겠다" "인권침해라고 해야 하는 사람은 박 전 대통령이 아니라 현재 수용자들" https://t.c…
+
+
+2017-10-19 14:10:26,125
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+국감장에 누운 노회찬 ＂朴인권침해? 제가 누워보겠다＂ (출처 : 뉴스1 | 네이버 뉴스) https://t.co/PvWeQD9CAT
+
+
+2017-10-19 14:10:27,031
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @ITREVI97: 오늘 cgv 목동 18:45~ 종영시
+대장 김창수 무대인사 B열 중블 원가양도합니다!
+
+멘션이나 디엠주세요!
+
+
+2017-10-19 14:10:28,745
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @k_aquinas: 지금 방송에서 조영남 유죄 소식 내보내고는 마무리 노래가 모란동백. “이 노래는 조영남씨가 자기 장례식에서 들려주길 원한 노래로서”... 
+
+야 잠깐, 이런식으로 보내는 거얔ㅋㅋㅋㅋ?
+
+
+2017-10-19 14:10:29,293
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @moonlover333: 국감장에 누운 노회찬
+"朴인권침해? 제가 누워보겠다" https://t.co/DIyHoO2AWE
+
+쓸데없는 신소리 그만듣자!
+그냥 일반 재소자 강력범방
+다인실에 당장 처 넣어라!
+
+신문지 2장반 만큼의 공간에서
+잠 처…
+
+
+2017-10-19 14:10:33,187
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @LJS_MOON: 국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다"  https://t.co/14srdZKmwo
+
+노회찬 ㅋㅋㅋ
+
+
+2017-10-19 14:10:45,098
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @hcroh: [jtbc뉴스룸] 노회찬 "박근혜 인권침해 주장, 치밀한 조기석방 프로젝트" https://t.co/dbEGy1sHj9
+
+
+2017-10-19 14:10:47,037
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @moonlover333: 국감장에 누운 노회찬
+"朴인권침해? 제가 누워보겠다" https://t.co/DIyHoO2AWE
+
+쓸데없는 신소리 그만듣자!
+그냥 일반 재소자 강력범방
+다인실에 당장 처 넣어라!
+
+신문지 2장반 만큼의 공간에서
+잠 처…
+
+
+2017-10-19 14:10:50,449
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+국감장에 누운 노회찬 “朴 인권침해? 제가 한번 누워보겠습니다”
+https://t.co/8L9MwrATvW https://t.co/94XO3YkoWK
+
+
+2017-10-19 14:10:50,592
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+노회찬을비롯 모든 저질정치인과 종편패널들이 악의적으로 대통령을 비방하고 마치 유죄인양 재판부에 영향을 미치기위한 언행들자체가 인권침해다.개ㅆ놈들아. https://t.co/11Ajb5ZOGM
+
+
+2017-10-19 14:10:56,366
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @hcroh: [오마이포토] 국감장에 신문지깔고 드러누운 노회찬  https://t.co/PEVr7nK3Mq
+
+
+2017-10-19 14:11:01,642
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @seojuho: 노회찬 정의당 원내대표 "다스 실소유주 문제는 2007년 대통령 선거를 관통할 정도로 중요한 문제였다" "다스는 누구 거냐..檢, MB 철저수사해 진실 밝혀야" https://t.co/W8hSpLILLE
+
+
+2017-10-19 14:11:06,605
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @hcroh: [오마이포토] 국감장에 신문지깔고 드러누운 노회찬  https://t.co/PEVr7nK3Mq
+
+
+2017-10-19 14:11:06,606
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @dongamedia: 국감장에 누운 노회찬 “朴 인권침해? 제가 한번 누워보겠습니다”
+https://t.co/8L9MwrATvW https://t.co/94XO3YkoWK
+
+
+2017-10-19 14:11:16,159
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @yuboowoocho: 부산 에이즈 , '초대형 재앙' 되나, '괴담이 현실로' <- 기사제목이 이래서 뭔가 했더니 에이즈에 감염된 여성이 콘돔 없이 성매매를 햇다는 내용인데 왜 초대형 재앙이고 괴담이 현실이 된다는거여 성매매를 안 하면 되는…
+
+
+2017-10-19 14:11:28,290
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @seojuho: 노회찬 정의당 원내대표 "서울구치소 제소자 1인당 수용면적은 1.06㎡"라며 "알기 쉽게 계산을 해보면 신문 2장 반인데 보여주겠다" "인권침해라고 해야 하는 사람은 박 전 대통령이 아니라 현재 수용자들" https://t.c…
+
+
+2017-10-19 14:11:47,466
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:11:59,551
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+부산 에이즈로 머 이러쿵 저러쿵 하는데 어떤 사람이 부산 사람 서울 올라오지마라 에이즈 옮길라 이런 글 썼네 와 정말,,
+
+
+2017-10-19 14:12:04,536
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+이시간 포털 검색순위 
+#부산에이즈
+#노회찬
+#채시라
+#박결
+#대장김창수
+#함승희
+#신설동유령역
+#klpga
+#sbs골프
+#서인영
+https://t.co/y2Ug6MU44c
+
+
+2017-10-19 14:12:12,968
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+부산 에이즈 창놈이 지적장애여성 성매매 시킨거네 우웨에ㅣ 한남 재기좀
+
+
+2017-10-19 14:12:15,529
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @newsvop: 노회찬  “박근혜 국제법률팀 변호사는 독재자 변호해 온 인물”@newsvop https://t.co/LOGWO6tYvC
+
+
+2017-10-19 14:12:23,915
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @dongamedia: 국감장에 누운 노회찬 “朴 인권침해? 제가 한번 누워보겠습니다”
+https://t.co/8L9MwrATvW https://t.co/94XO3YkoWK
+
+
+2017-10-19 14:12:35,681
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다" https://t.co/RGXO63kTpR
+
+
+2017-10-19 14:12:39,053
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @RS26rubezh: 노회찬 이양반은 직접 나서서 그네 정곡을 찌른다 https://t.co/5YL9ctDYmJ
+
+
+2017-10-19 14:12:44,916
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+카지노사이트 →586MMX•COM⇔ 를 찾 ■고 계 へ십 や니 ピ까?
+확せ실し한 UCC카지노 정こ보て를 제▣공♣해 드☎리シ겠ञ습 ん니 र
+
+#카지노사이트     ん■
+
+ビ4   공백ハ
+부산 '에이즈 여성'… https://t.co/4HJQj3FJz4
+
+
+2017-10-19 14:12:46,802
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @moonlover333: 국감장에 누운 노회찬
+"朴인권침해? 제가 누워보겠다" https://t.co/DIyHoO2AWE
+
+쓸데없는 신소리 그만듣자!
+그냥 일반 재소자 강력범방
+다인실에 당장 처 넣어라!
+
+신문지 2장반 만큼의 공간에서
+잠 처…
+
+
+2017-10-19 14:12:48,671
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @LJS_MOON: 국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다"  https://t.co/14srdZKmwo
+
+노회찬 ㅋㅋㅋ
+
+
+2017-10-19 14:12:57,629
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:13:00,455
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @seojuho: 노회찬 정의당 원내대표 "서울구치소 제소자 1인당 수용면적은 1.06㎡"라며 "알기 쉽게 계산을 해보면 신문 2장 반인데 보여주겠다" "인권침해라고 해야 하는 사람은 박 전 대통령이 아니라 현재 수용자들" https://t.c…
+
+
+2017-10-19 14:13:08,623
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:13:10,351
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @hcroh: [오마이포토] 국감장에 신문지깔고 드러누운 노회찬  https://t.co/PEVr7nK3Mq
+
+
+2017-10-19 14:13:12,486
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @k_aquinas: 지금 방송에서 조영남 유죄 소식 내보내고는 마무리 노래가 모란동백. “이 노래는 조영남씨가 자기 장례식에서 들려주길 원한 노래로서”... 
+
+야 잠깐, 이런식으로 보내는 거얔ㅋㅋㅋㅋ?
+
+
+2017-10-19 14:13:16,428
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @daknews10: 닥503 무기징역
+사면 금지✔
+
+국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다" 
+
+"탄원서 낼 사람은 朴 아닌 일반제소자"
+ https://t.co/WYUtoUXtco
+
+
+2017-10-19 14:13:17,194
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @LJS_MOON: 국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다"  https://t.co/14srdZKmwo
+
+노회찬 ㅋㅋㅋ
+
+
+2017-10-19 14:13:25,554
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @ITREVI97: 오늘 cgv 목동 18:45~ 종영시
+대장 김창수 무대인사 B열 중블 원가양도합니다!
+
+멘션이나 디엠주세요!
+
+
+2017-10-19 14:13:25,743
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @seojuho: 노회찬 정의당 원내대표 "서울구치소 제소자 1인당 수용면적은 1.06㎡"라며 "알기 쉽게 계산을 해보면 신문 2장 반인데 보여주겠다" "인권침해라고 해야 하는 사람은 박 전 대통령이 아니라 현재 수용자들" https://t.c…
+
+
+2017-10-19 14:13:31,746
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @seojuho: 노회찬 정의당 원내대표 "다스 실소유주 문제는 2007년 대통령 선거를 관통할 정도로 중요한 문제였다" "다스는 누구 거냐..檢, MB 철저수사해 진실 밝혀야" https://t.co/W8hSpLILLE
+
+
+2017-10-19 14:13:37,831
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:13:59,521
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @RS26rubezh: 노회찬 이양반은 직접 나서서 그네 정곡을 찌른다 https://t.co/5YL9ctDYmJ
+
+
+2017-10-19 14:14:02,115
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @dongamedia: 국감장에 누운 노회찬 “朴 인권침해? 제가 한번 누워보겠습니다”
+https://t.co/8L9MwrATvW https://t.co/94XO3YkoWK
+
+
+2017-10-19 14:14:07,489
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @jschue1: 국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다"https://t.co/SYqqFNQYZf "서울구치소 제소자 1인당 수용면적은 1.06㎡으로 신문지 두장 반.. 박근혜가 수용된 거실은 10.08㎡으로… 
+
+
+2017-10-19 14:14:35,416
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @HYS_Family: 이것이 팩트다
+박근혜가, 인권유린 당한다고요?
+
+정의당 노회찬 원내대표가 땅바닥에 누웠습니다.
+서울구치소 제소자 1인당 면적은 1.06㎡ 신문 2장 이다.  지금 박근혜는 10.08㎡, 10배크기 호텔 이다.
+https:…
+
+
+2017-10-19 14:14:35,996
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:14:37,206
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @hcroh: [오마이포토] 국감장에 신문지깔고 드러누운 노회찬  https://t.co/PEVr7nK3Mq
+
+
+2017-10-19 14:15:08,916
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+노회찬 씨는 코스프레가 아니라 퍼포먼스가 좋다.
+사진출처: https://t.co/b1znuM12N9 https://t.co/MfChos4Dht
+
+
+2017-10-19 14:15:09,303
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @estarkkr: 국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다"
+[국감현장] "탄원서 낼 사람은 朴 아닌 일반제소자"
+더이상 차별하지말고 공정하게 일반혼외수용자로 보내라 !!!
+ https://t.co/X000LNkNa9
+
+
+2017-10-19 14:15:13,406
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+바카라주소 ≪586MMX۰CⓞM》 가 당신을 응원 합니다. 
+
+     प
+ #바카라주소  थ
+4い ラ
+감사원 국감, 세월호·수리온 집중포화…'정권눈치보기' 질타
+누운 노회찬 https://t.co/do8rTbSAYS
+
+
+2017-10-19 14:15:25,717
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+신설동 유령역 這個孩子曾在這拍過CHEER UP的地點 暫時開放讓人參觀 有興趣的朋友可以去看看(雖然我覺得沒什麼好看的😂 https://t.co/JxcMQIaU4C
+
+
+2017-10-19 14:15:35,197
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @daknews10: 닥503 무기징역
+사면 금지✔
+
+국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다" 
+
+"탄원서 낼 사람은 朴 아닌 일반제소자"
+ https://t.co/WYUtoUXtco
+
+
+2017-10-19 14:15:42,064
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:15:48,042
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+'그림 대작' 조영남 1심 징역형…"엄연한 사기" 
+ https://t.co/FvrPHvKpYm
+
+
+2017-10-19 14:15:48,854
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:15:59,825
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @seojuho: 노회찬 정의당 원내대표 "다스 실소유주 문제는 2007년 대통령 선거를 관통할 정도로 중요한 문제였다" "다스는 누구 거냐..檢, MB 철저수사해 진실 밝혀야" https://t.co/W8hSpLILLE
+
+
+2017-10-19 14:15:59,855
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:16:01,976
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @RS26rubezh: 노회찬 이양반은 직접 나서서 그네 정곡을 찌른다 https://t.co/5YL9ctDYmJ
+
+
+2017-10-19 14:16:02,993
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:16:20,914
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @moonlover333: 국감장에 누운 노회찬
+"朴인권침해? 제가 누워보겠다" https://t.co/DIyHoO2AWE
+
+쓸데없는 신소리 그만듣자!
+그냥 일반 재소자 강력범방
+다인실에 당장 처 넣어라!
+
+신문지 2장반 만큼의 공간에서
+잠 처…
+
+
+2017-10-19 14:16:41,555
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @dongamedia: 국감장에 누운 노회찬 “朴 인권침해? 제가 한번 누워보겠습니다”
+https://t.co/8L9MwrATvW https://t.co/94XO3YkoWK
+
+
+2017-10-19 14:16:43,759
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @seojuho: 노회찬 정의당 원내대표 "서울구치소 제소자 1인당 수용면적은 1.06㎡"라며 "알기 쉽게 계산을 해보면 신문 2장 반인데 보여주겠다" "인권침해라고 해야 하는 사람은 박 전 대통령이 아니라 현재 수용자들" https://t.c…
+
+
+2017-10-19 14:17:11,276
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @moonlover333: 국감장에 누운 노회찬
+"朴인권침해? 제가 누워보겠다" https://t.co/DIyHoO2AWE
+
+쓸데없는 신소리 그만듣자!
+그냥 일반 재소자 강력범방
+다인실에 당장 처 넣어라!
+
+신문지 2장반 만큼의 공간에서
+잠 처…
+
+
+2017-10-19 14:17:15,235
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @dakishimete5896: 부산 에이즈 감염 여성 ＂피임기구 없이 10~20번 성매매＂ (출처 : 한국경제 | 네이버 뉴스) https://t.co/Uw1N0yb7ey
+
+지적장애 2급 장애 가진 여성이고 남자친구가 성매매 알선함;;;
+
+
+2017-10-19 14:17:20,461
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다" | 다음뉴스 https://t.co/Rul9NRHue8
+
+
+2017-10-19 14:17:22,452
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @seojuho: 노회찬 정의당 원내대표 "서울구치소 제소자 1인당 수용면적은 1.06㎡"라며 "알기 쉽게 계산을 해보면 신문 2장 반인데 보여주겠다" "인권침해라고 해야 하는 사람은 박 전 대통령이 아니라 현재 수용자들" https://t.c…
+
+
+2017-10-19 14:17:32,203
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @hcroh: [오마이포토] 국감장에 신문지깔고 드러누운 노회찬  https://t.co/PEVr7nK3Mq
+
+
+2017-10-19 14:17:40,858
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @bunncartman: 노회찬은 됐고 노회찬 선택적 빙의된 민주당의원 가지고 싶다
+
+
+2017-10-19 14:17:47,106
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @dongamedia: 국감장에 누운 노회찬 “朴 인권침해? 제가 한번 누워보겠습니다”
+https://t.co/8L9MwrATvW https://t.co/94XO3YkoWK
+
+
+2017-10-19 14:17:50,470
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @jschue1: 국감장에 누운 노회찬 "朴인권침해? 제가 누워보겠다"https://t.co/SYqqFNQYZf "서울구치소 제소자 1인당 수용면적은 1.06㎡으로 신문지 두장 반.. 박근혜가 수용된 거실은 10.08㎡으로… 
+
+
+2017-10-19 14:17:50,946
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+신설동 유령역 알아보니까 촬영은 힘들겠네 ㅋㅋ
+
+
+2017-10-19 14:17:52,553
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @Light56_4BH: 신설동 유령역
+라잇세이버 뮤비 그 장소군 ! https://t.co/nycA95rJmt
+
+
+2017-10-19 14:18:03,956
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @hcroh: [오마이포토] 국감장에 신문지깔고 드러누운 노회찬  https://t.co/PEVr7nK3Mq
+
+
+2017-10-19 14:18:07,198
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+RT @moonlover333: 국감장에 누운 노회찬
+"朴인권침해? 제가 누워보겠다" https://t.co/DIyHoO2AWE
+
+쓸데없는 신소리 그만듣자!
+그냥 일반 재소자 강력범방
+다인실에 당장 처 넣어라!
+
+신문지 2장반 만큼의 공간에서
+잠 처…
+
+
+2017-10-19 14:18:11,012
+INFO : com.sist.twitter.TwitterListener.onStatus(TwitterListener.java:42)
+신설동 유령역 미니 팬미팅을 생각해봤는데
+1회에 20명씩만 입장 가능이네 아쉽다 ㅋㅋ
+
+https://t.co/fxmWcX7CJB https://t.co/yYF12aNA2K
+

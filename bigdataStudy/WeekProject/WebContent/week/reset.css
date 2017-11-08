@@ -1,0 +1,26 @@
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, legend, 
+textarea, select, fieldset, p, button, menu, figure, figcaption {margin:0; padding:0;}
+
+
+header, aside, article, footer, hgroup, menu, nav, section, details, figure, figcaption {display:block; }
+
+
+body, input, textarea, select, button, table {
+	font-family: "Nanum Barun Gothic",
+	"Nanum Gothic", "Malgun Gothic", helvetica, sans-serif; 
+	font-size:12px; line-height:1.7; color:#878787;}
+
+
+a {color:#878787; text-decoration:none;}
+a:hover {color:#390;}
+
+h1, h2, h3, h4, h5, h6 {font-size:12px; font-weight:normal; }
+
+
+ul, li, ol {list-style:none;}
+
+img, fieldset {border:none; width:100%;}
+
+.blind {display:block; overflow:hidden; width:0; height:0; position:absolute; top:0; left:0; font-size:0; line-height:0 }
+

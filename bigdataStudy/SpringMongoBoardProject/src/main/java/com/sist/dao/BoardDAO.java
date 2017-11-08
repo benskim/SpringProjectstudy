@@ -91,7 +91,6 @@ public class BoardDAO {
    public List<BoardVO> boardFind(String fs,String ss){
 	   BasicQuery query = new BasicQuery("{"+fs+":"+"{$regex:'.*"+ss+"'}}");
 	   return mt.find(query, BoardVO.class,"board");
-	   
    }
 }
 
