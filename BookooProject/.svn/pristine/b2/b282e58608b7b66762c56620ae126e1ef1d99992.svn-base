@@ -1,0 +1,44 @@
+package com.sist.main.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Repository;
+import java.util.*;
+
+@Repository
+public class BookListDAO {
+	@Autowired
+	private MongoTemplate bdmt;
+	
+	public static void main(String[] args)
+	{
+		BookListDAO dao = new BookListDAO();
+		
+		List<BookListVO> tlist = dao.mainlist();
+		
+		for(BookListVO tl : tlist)
+		{
+			System.out.println(tl.getIsbn());
+			System.out.println(tl.getTitle());
+			System.out.println(tl.getReviewer());
+			System.out.println(tl.getPublisher());
+			System.out.println(tl.getPrice());
+			System.out.println(tl.getStar());
+			System.out.println(tl.getBimg());
+			System.out.println("");
+			
+		}
+	}
+	public List<BookListVO> mainlist()
+	{
+		List<BookListVO> list = new ArrayList<BookListVO>();
+		
+		Query query = new Query();
+		query = query.limit(20);
+		
+		
+		return bdmt.find(query, BookListVO.class, "booklist");
+	}
+
+}

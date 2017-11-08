@@ -1,0 +1,538 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>추천도서 페이지</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- main.do 는 루트 디렉토리(webcontent) 에서 시작하므로 경로를 이렇게해야함 -->
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<style>
+
+.checkbox label:after, .radio label:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.checkbox .cr, .radio .cr {
+	position: relative;
+	display: inline-block;
+	border: 1px solid #a9a9a9;
+	border-radius: .25em;
+	width: 1.3em;
+	height: 1.3em;
+	float: left;
+	margin-right: .5em;
+}
+
+.radio .cr {
+	border-radius: 50%;
+}
+
+.checkbox .cr .cr-icon, .radio .cr .cr-icon {
+	position: absolute;
+	font-size: .8em;
+	line-height: 0;
+	top: 50%;
+	left: 20%;
+}
+
+.radio .cr .cr-icon {
+	margin-left: 0.04em;
+}
+
+.checkbox label input[type="checkbox"], .radio label input[type="radio"]
+	{
+	display: none;
+}
+
+.checkbox label input[type="checkbox"]+.cr>.cr-icon, .radio label input[type="radio"]+.cr>.cr-icon
+	{
+	transform: scale(3) rotateZ(-20deg);
+	opacity: 0;
+	transition: all .3s ease-in;
+}
+
+.checkbox label input[type="checkbox"]:checked+.cr>.cr-icon, .radio label input[type="radio"]:checked+.cr>.cr-icon
+	{
+	transform: scale(1) rotateZ(0deg);
+	opacity: 1;
+}
+
+.checkbox label input[type="checkbox"]:disabled+.cr, .radio label input[type="radio"]:disabled+.cr
+	{
+	opacity: .5;
+}
+
+.hovereffect {
+	width: 100%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	cursor: default;
+}
+
+.hovereffect .overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out
+}
+
+.hovereffect img {
+	display: block;
+	position: relative;
+	-webkit-transition: all .4s linear;
+	transition: all .4s linear;
+}
+
+.hovereffect h2 {
+	text-transform: uppercase;
+	color: #fff;
+	text-align: center;
+	position: relative;
+	font-size: 17px;
+	background: rgba(0, 0, 0, 0.6);
+	-webkit-transform: translatey(-100px);
+	-ms-transform: translatey(-100px);
+	transform: translatey(-100px);
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	padding: 10px;
+}
+
+.hovereffect a.info {
+	text-decoration: none;
+	display: inline-block;
+	text-transform: uppercase;
+	color: #fff;
+	border: 1px solid #fff;
+	background-color: transparent;
+	opacity: 0;
+	filter: alpha(opacity = 0);
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	margin: 50px 0 0;
+	padding: 7px 14px;
+}
+
+.hovereffect a.info:hover {
+	box-shadow: 0 0 5px #fff;
+}
+
+.hovereffect:hover img {
+	-ms-transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
+.hovereffect:hover .overlay {
+	opacity: 1;
+	filter: alpha(opacity = 100);
+}
+
+.hovereffect:hover h2, .hovereffect:hover a.info {
+	opacity: 1;
+	filter: alpha(opacity = 100);
+	-ms-transform: translatey(0);
+	-webkit-transform: translatey(0);
+	transform: translatey(0);
+}
+
+.hovereffect:hover a.info {
+	-webkit-transition-delay: .2s;
+	transition-delay: .2s;
+}
+#footer-foot {
+    border-top: 1px solid;
+    width: 980px;
+}
+.footer-list li {
+    list-style: none;
+    display: inline;
+}
+
+</style>
+</head>
+<body>
+	<!-- 상단 라디오 체크박스 -->
+	<div class="container">
+	 <!-- 상단바 : 타 사이트 링크 및 검색창 -->
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<strong><a class="navbar-brand" href="#">BOOKOO</a></strong>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a
+					href="http://www.yes24.com">YES24</a></li>
+				<li><a
+					href="http://www.aladin.co.kr">알라딘</a></li>
+				<li><a
+					href="http://www.kyobobook.co.kr">교보문고</a></li>
+				<li><a
+					href="http://bsearch.interpark.com">인터파크</a></li>
+			</ul>
+			<form class="navbar-form navbar-left">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Search">
+				</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+	</nav>
+	<!-- 상단바 끝 -->
+        <br> <br>
+      
+		<h3>추천도서</h3>
+		<hr />
+		<form method=post action="recomend.jsp">
+			<div class="col-lg-6">
+				<div class="radio">
+					<label> <input type="radio" name="agecheck" value="">
+						<span class="cr"><i
+							class="cr-icon glyphicon glyphicon-ok-sign"></i></span> 10대
+					</label> <label> <input type="radio" name="agecheck" value="">
+						<span class="cr"><i
+							class="cr-icon glyphicon glyphicon-ok-sign"></i></span> 20대
+					</label> <label> <input type="radio" name="agecheck" value="">
+						<span class="cr"><i
+							class="cr-icon glyphicon glyphicon-ok-sign"></i></span> 30대
+					</label> <label> <input type="radio" name="agecheck" value="">
+						<span class="cr"><i
+							class="cr-icon glyphicon glyphicon-ok-sign"></i></span> 40대
+					</label> <label> <input type="radio" name="agecheck" value="">
+						<span class="cr"><i
+							class="cr-icon glyphicon glyphicon-ok-sign"></i></span> 50대
+					</label> <label> <input type="radio" name="agecheck" value="">
+						<span class="cr"><i
+							class="cr-icon glyphicon glyphicon-ok-sign"></i></span> 60대 이상
+					</label>
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="radio">
+					<label> <input type="radio" name="sexcheck" value="">
+						<span class="cr"><i
+							class="cr-icon glyphicon glyphicon-ok-sign"></i></span> 남
+					</label> <label> <input type="radio" name="sexcheck" value="">
+						<span class="cr"><i
+							class="cr-icon glyphicon glyphicon-ok-sign"></i></span> 여
+					</label>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="radio">
+					<label> <input type="radio" name="pricecheck" value="">
+						<span class="cr"><i
+							class="cr-icon glyphicon glyphicon-ok-sign"></i></span> 가격순
+					</label> <label> <input type="radio" name="pricecheck" value="">
+						<span class="cr"><i
+							class="cr-icon glyphicon glyphicon-ok-sign"></i></span> 평점순
+					</label>
+				</div>
+			</div>
+			<div class="col-lg-1">
+				<input type="submit" value="검색">
+			</div>
+		</form>
+		
+		<br> <br> <hr/> <br>
+		<!-- ---------------상단 라디오 체크박스 끝----------------------------------------------- -->
+		<div class="container-fluid bg-3 text-center">
+
+			<br>
+			<div class="row">
+				<div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+					<div class="hovereffect">
+						<img class="img-responsive" src="../image/711.jpg" alt="" width=200 height=250> 
+						<a href="#">
+							<div class="overlay">
+								<h2>
+									평점<br><br>별 개수
+								</h2>
+								<p>줄거리 요악 이책은 무슨무슨 내용입니다.</p>
+							</div>
+						</a>
+
+					</div>
+					<h3 align="center">책이름</h3>
+					<h4 align="center">저자이름</h4>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+					<div class="hovereffect">
+						<img class="img-responsive" src="../image/711.jpg" alt="" width=200 height=250> 
+						<a href="#">
+							<div class="overlay">
+								<h2>
+									평점<br><br>별 개수
+								</h2>
+								<p>줄거리 요악 이책은 무슨무슨 내용입니다.</p>
+							</div>
+						</a>
+
+					</div>
+					<h3 align="center">책이름</h3>
+					<h4 align="center">저자이름</h4>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+					<div class="hovereffect">
+						<img class="img-responsive" src="../image/711.jpg" alt="" width=200 height=250> 
+						<a href="#">
+							<div class="overlay">
+								<h2>
+									평점<br><br>별 개수
+								</h2>
+								<p>줄거리 요악 이책은 무슨무슨 내용입니다.</p>
+							</div>
+						</a>
+
+					</div>
+					<h3 align="center">책이름</h3>
+					<h4 align="center">저자이름</h4>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+					<div class="hovereffect">
+						<img class="img-responsive" src="../image/711.jpg" alt="" width=200 height=250> 
+						<a href="#">
+							<div class="overlay">
+								<h2>
+									평점<br><br>별 개수
+								</h2>
+								<p>줄거리 요악 이책은 무슨무슨 내용입니다.</p>
+							</div>
+						</a>
+
+					</div>
+					<h3 align="center">책이름</h3>
+					<h4 align="center">저자이름</h4>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+					<div class="hovereffect">
+						<img class="img-responsive" src="../image/711.jpg" alt="" width=200 height=250> 
+						<a href="#">
+							<div class="overlay">
+								<h2>
+									평점<br><br>별 개수
+								</h2>
+								<p>줄거리 요악 이책은 무슨무슨 내용입니다.</p>
+							</div>
+						</a>
+
+					</div>
+					<h3 align="center">책이름</h3>
+					<h4 align="center">저자이름</h4>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+					<div class="hovereffect">
+						<img class="img-responsive" src="../image/711.jpg" alt="" width=200 height=250> 
+						<a href="#">
+							<div class="overlay">
+								<h2>
+									평점<br><br>별 개수
+								</h2>
+								<p>줄거리 요악 이책은 무슨무슨 내용입니다.</p>
+							</div>
+						</a>
+
+					</div>
+					<h3 align="center">책이름</h3>
+					<h4 align="center">저자이름</h4>
+				</div>				
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+					<div class="hovereffect">
+						<img class="img-responsive" src="../image/711.jpg" alt=""> 
+						<a href="#">
+							<div class="overlay">
+								<h2>
+									평점<br><br>별 개수
+								</h2>
+								<p>줄거리 요악 이책은 무슨무슨 내용입니다.</p>
+							</div>
+						</a>
+
+					</div>
+					<h3 align="center">책이름</h3>
+					<h4 align="center">저자이름</h4>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+					<div class="hovereffect">
+						<img class="img-responsive" src="../image/711.jpg" alt=""> 
+						<a href="#">
+							<div class="overlay">
+								<h2>
+									평점<br><br>별 개수
+								</h2>
+								<p>줄거리 요악 이책은 무슨무슨 내용입니다.</p>
+							</div>
+						</a>
+
+					</div>
+					<h3 align="center">책이름</h3>
+					<h4 align="center">저자이름</h4>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+					<div class="hovereffect">
+						<img class="img-responsive" src="../image/711.jpg" alt=""> 
+						<a href="#">
+							<div class="overlay">
+								<h2>
+									평점<br><br>별 개수
+								</h2>
+								<p>줄거리 요악 이책은 무슨무슨 내용입니다.</p>
+							</div>
+						</a>
+
+					</div>
+					<h3 align="center">책이름</h3>
+					<h4 align="center">저자이름</h4>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+					<div class="hovereffect">
+						<img class="img-responsive" src="../image/711.jpg" alt=""> 
+						<a href="#">
+							<div class="overlay">
+								<h2>
+									평점<br><br>별 개수
+								</h2>
+								<p>줄거리 요악 이책은 무슨무슨 내용입니다.</p>
+							</div>
+						</a>
+
+					</div>
+					<h3 align="center">책이름</h3>
+					<h4 align="center">저자이름</h4>
+				</div>
+			</div>
+		</div>
+		<!-- 하단부 페이징 ------------------------------------------------------------------- -->
+		<div align="center">
+			<ul class="pagination">
+				  <li><a href="#">1</a></li>
+				  <li><a href="#">2</a></li>
+				  <li><a href="#">3</a></li>
+				  <li><a href="#">4</a></li>
+				  <li><a href="#">5</a></li>
+				</ul>
+		</div>
+		<!--  추천 도서 목록 여기 까지------------------------------------------------------------ -->
+		<!-- 감정 분석 목록--------------------------------------------------------------------- -->
+		<hr>
+		<div align="center">감성분석</div><br/>
+		<div class="col-lg-3 list-group">
+			<a href="#">기쁠때</a>
+			<a href="#" class="list-group-item">First item</a>
+		    <a href="#" class="list-group-item">Second item</a>
+		    <a href="#" class="list-group-item">Third item</a>
+		</div>
+		<div class="col-lg-3 list-group">
+			<a>화날때</a>
+			<a href="#" class="list-group-item">First item</a>
+		    <a href="#" class="list-group-item">Second item</a>
+		    <a href="#" class="list-group-item">Third item</a>
+		</div>
+		<div class="col-lg-3 list-group">
+			<a href="#">슬플때</a>
+			<a href="#" class="list-group-item">First item</a>
+		    <a href="#" class="list-group-item">Second item</a>
+		    <a href="#" class="list-group-item">Third item</a>
+		</div>
+		<div class="col-lg-3 list-group">
+			<a href="#">즐거울때	</a>
+			<a href="#" class="list-group-item">First item</a>
+		    <a href="#" class="list-group-item">Second item</a>
+		    <a href="#" class="list-group-item">Third item</a>
+		</div>
+		<hr>
+		<div align="center">TV에 나오책</div>
+		  <!-- 링크 -->
+        <br> <br> <br>
+        <nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<strong><a class="navbar-brand" href="#">BOOKOO</a></strong>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a
+					href="http://www.yes24.com">YES24</a></li>
+				<li><a
+					href="http://www.aladin.co.kr">알라딘</a></li>
+				<li><a
+					href="http://www.kyobobook.co.kr">교보문고</a></li>
+				<li><a
+					href="http://bsearch.interpark.com">인터파크</a></li>
+			</ul>
+		</div>
+	</nav>
+   
+    <!-- 링크끝 -->
+    <!-- container 끝-->
+    <br>
+    <br>
+    <br>
+
+    <!-- footer 시작 -->
+    <footer class="container-fluid text-center" id="footer-foot">
+
+        <div class="footer">
+            <ul class="footer-list">
+                <li><a class="NPI=a:agreement"
+                    href="http://www.naver.com/rules/service.html" target="_blank">이용약관</a>
+                    |</li>
+                <li><a class="NPI=a:privacy"
+                    href="http://www.naver.com/rules/privacy.html" target="_blank"><strong>개인정보처리방침</strong></a>
+                    |</li>
+                <li><a class="NPI=a:disclaimer"
+                    href="http://www.naver.com/rules/disclaimer.html" target="_blank">책임의
+                        한계와 법적고지</a> |</li>
+                <li><a class="NPI=a:publisher"
+                    href="http://publisher.naver.com/" target="_blank">출판사 제휴안내</a> |</li>
+                <li><a class="NPI=a:library" href="/guide/nl/index.nhn"
+                    target="_blank">도서관안내</a> |</li>
+                <li><a class="NPI=a:help"
+                    href="https://help.naver.com/support/service/main.nhn?serviceNo=702"
+                    target="_blank">책 고객센터</a> |</li>
+            </ul>
+            <p class="info">
+                네이버책은 통신판매중개자로서 통신판매의 당사자가 아니며, 상품 주문, 배송 및 환불의 의무와 책임은 각 판매업체에
+                있습니다.<br> 본 콘텐츠의 저작권은 저자 또는 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라
+                법적책임을 질 수 있습니다.<br> 외부 저작권자가 제공한 콘텐츠는 네이버의 입장과 다를 수 있습니다.
+            </p>
+            <p class="info">
+                사업자등록번호 : 220-81-62517<span>통신판매업 신고번호</span> : 경기성남 제 2006 - 692호<span>대표이사
+                    : 한성숙</span><span><a
+                    href="http://www.ftc.go.kr/info/bizinfo/communicationList.jsp">사업자등록정보
+                        확인</a></span><br> 주소 : 경기도 성남시 분당구 불정로 6 네이버 그린팩토리 463-867<span>대표전화
+                    : 1588-3820</span>
+            </p>
+            <address>
+                <a href="http://www.navercorp.com/" target="_blank"
+                    class="logo N=a:fot.nhn">NAVER</a> Copyright © <a
+                    class="N=a:fot.nhncorp" href="http://www.navercorp.com/"
+                    target="_blank"><strong>NAVER Corp.</strong></a> All Rights
+                Reserved.
+            </address>
+        </div>
+
+    </footer>
+
+
+
+
+
+		
+	</div>
+</body>
+</html>

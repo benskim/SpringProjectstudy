@@ -1,0 +1,380 @@
+package com.sist.bookoo;
+
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.snu.ids.ha.index.Keyword;
+import org.snu.ids.ha.index.KeywordExtractor;
+import org.snu.ids.ha.index.KeywordList;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.support.DaoSupport;
+import org.springframework.data.hadoop.mapreduce.JobRunner;
+
+import java.io.FileReader;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sist.main.dao.BookListDAO;
+import com.sist.main.dao.BookListVO;
+
+import com.sist.main.news.dao.NewsDAO;
+import com.sist.main.news.dao.NewsVO;
+import com.sist.main.newsmgr.NewsManager;
+import com.sist.mongo.BookRentVO;
+import com.sist.mapred.FeelManager;
+import com.sist.mapred.NaverManager;
+import com.sist.mapred.RDataVO;
+import com.sist.mapred.RManager;
+import com.sist.mongo.ReviewVO;
+
+import com.sist.newbookdao.NewBooklistDAO;
+import com.sist.newbookdao.NewBooklistVO;
+
+import com.sist.rankdao.RankDAO;
+import com.sist.recomend.RecomendDAO;
+import com.sist.recomend.ThemaVO;
+import com.sist.writerdao.WriterDAO;
+import com.sist.writerdao.WriterVO;
+import com.sist.writerdao.WriterWeekManager;
+import com.sist.writerdao.WriterWeekVO;
+
+@Controller
+public class MainController {
+	@Autowired
+	private BookListDAO bldao;
+	@Autowired
+	private NewsDAO newsdao;
+	@Autowired
+	private NewsManager newsmgr;
+	@Autowired
+	private RankDAO rankdao;
+	@Autowired
+	private NewBooklistDAO newdao;
+	@Autowired
+	private RecomendDAO rdao;
+	
+	@Autowired
+	private WriterDAO writerdao;
+	
+	// 긍정과 부정 % , 워드클라우드 private list
+    @Autowired
+    private RManager rm;
+    @Autowired
+    private NaverManager naver;
+    @Autowired
+    private FeelManager feelm;
+    @Autowired
+    private JobRunner jr; //맵리듀스 실행
+
+	@RequestMapping("main/main.do")
+	public String main_main(String page, String data,Model model){
+		
+		List<BookListVO> list = bldao.mainlist();
+		List<BookListVO> list2 = bldao.mainlist2();
+		List<BookListVO> list3 = bldao.mainlist3();
+			
+		if(data==null)
+			data="[신간]";
+		if(page==null)
+			page="1";
+		
+		int curpage = Integer.parseInt(page);
+		System.out.println(curpage);
+		
+		//newsdao.newsDrop();
+		//newsmgr.newsData(data);
+		List<NewsVO> newslist = newsdao.newsAllData(curpage);
+		
+		model.addAttribute("list", list);
+		model.addAttribute("list2",list2);
+		model.addAttribute("list3", list3);
+		
+		model.addAttribute("curpage",curpage);
+		model.addAttribute("totalpage",5);
+		model.addAttribute("data",data);
+		model.addAttribute("newslist",newslist);
+		return "main/main";
+	}
+	@RequestMapping("main/genredetail.do")
+	public String main_genre(){
+		
+		
+		return "main/genredetail";
+	}
+	@RequestMapping("main/recomend.do")
+	public String main_recomend(String thema, Model model){
+		if(thema==null){
+			thema="1";
+		}
+		int thema1=Integer.parseInt(thema);
+		List<ThemaVO> list=new ArrayList<ThemaVO>();
+		list=rdao.recomendByThema(thema1);
+		
+		model.addAttribute("list",list);
+		
+		return "main/recomend";
+	}
+	@RequestMapping("main/recomend1.do")
+	public String main_recomend1(String thema, Model model){
+		if(thema==null){
+			thema="1";
+		}
+		int thema1=Integer.parseInt(thema);
+		List<ThemaVO> list=new ArrayList<ThemaVO>();
+		list=rdao.recomendByThema(thema1);
+		for(ThemaVO vo:list){
+			String title=vo.getTitle2();
+			if(title.length()>10)
+			{
+				String t=title.substring(0,10);
+				t+="...";
+				vo.setTitle2(t);
+			}
+		}
+		model.addAttribute("list",list);
+		return "main/recomend1";
+	}
+	
+	@RequestMapping("main/newbook.do")
+	public String main_newbook(String page,Model model){
+		
+		if(page==null)
+			page="1";
+		int curpage=Integer.parseInt(page);
+		List<NewBooklistVO> list=newdao.newbookAllData(curpage);
+		int totalpage=newdao.NewsTotalPage();
+		System.out.println(totalpage);
+		
+		String json="[";
+		   for(NewBooklistVO vo:list)
+		   {
+			   json+="{country: \""+vo.getTitle()+"\",value:"+vo.getStar()+"},";
+		   }
+		   json=json.substring(0,json.lastIndexOf(","));
+		   json+="]";
+		   
+	    model.addAttribute("json", json);
+		
+		
+		
+		model.addAttribute("list",list);
+		model.addAttribute("totalpage",totalpage);
+		
+		return "main/newbook";
+	}
+
+	
+	@RequestMapping("main/best.do")//랭크 테이블 만드는 요청
+	public void main_best(){		
+		rankdao.makeBookRanktable();
+
+	}
+	
+	
+	
+	
+	@RequestMapping("main/best1.do")
+	public String main_bestpage(Model model){
+		List<BookListVO> list=rankdao.bestBooks();
+		//System.out.println("이것봐.."+list.size());
+		model.addAttribute("list", list);
+
+		return "main/best";
+	}
+	
+	@RequestMapping("main/detail.do")
+	public String main_detain(double isbn,Model model){
+		
+		BookListVO vo = newdao.bookDetailData(isbn);
+
+		
+		/* 리뷰분석 코드
+		//ReviewVO rvo = newdao.reviewGraphData(isbn);
+		
+		//model.addAttribute("rList", rvo);
+		*/
+		//연관도서 리스트 랜덤하게 뿌리기
+
+    	naver.naverBlogData(vo.getTitle());   //데이터수집
+    	naver.naverReplyData();					//데이터수집
+    	feelm.hadoopFileDelete();							//분석--┓
+    	feelm.copyFromLocal();
+    	try{
+    		jr.call();
+    	}catch(Exception ex){}
+    	// Run
+    	feelm.copyToLocal();								//분석--┛
+    	// R연동
+    	rm.wordCloud();
+    	
+    	List<RDataVO> rList=rm.feelGraph();
+ 	   
+		//ReviewVO rvo = newdao.reviewGraphData(isbn);
+
+		BookRentVO bookCate = (BookRentVO) newdao.detailRandomBook(isbn);
+		
+		//카테고리를 가지고 와야함.
+		
+		int detailCate = bookCate.getCategory();
+		
+		
+		
+		List<BookListVO> rentList= (List<BookListVO>) newdao.RandomBookDetail(detailCate);
+	    
+		/*	
+		if(rentList==null){
+			
+			String rentListNull ="연관도서가 없습니다.";
+		}
+		*/
+		//List<BookListVO> rentImage = new ArrayList<BookListVO>();
+		
+		/*for(BookRentVO rvo: rentList){
+			rentImage.add(newdao.detailRandomBimg(rvo.getIsbn13()));
+		}*/
+			
+		for(BookListVO rrvo: rentList){
+			
+			System.out.println(rrvo.getTitle()+" : "+rrvo.getBimg());
+	
+		}
+
+		//model.addAttribute("rList", rvo);
+
+		vo.setCount(vo.getBookin().length());
+		
+		vo.setCount1(vo.getPwriter().length());
+		
+		model.addAttribute("rList", rList);
+		model.addAttribute("vo",vo);
+		model.addAttribute("rentList",rentList);
+		
+		return "main/detail";
+	}
+	
+	
+	@RequestMapping("main/writer.do")
+	public String main_writer(Model model){
+		List<WriterVO> wlist = writerdao.writerAllData();
+		model.addAttribute("wlist", wlist);
+		
+		
+		List<WriterWeekVO> wwlist = writerdao.writerWeekAllData();
+		model.addAttribute("wwlist", wwlist);
+		
+		return "main/writer";
+		
+				
+	}
+	
+	
+	
+	@RequestMapping("main/search.do")
+	public String main_search(){
+		
+		
+		
+		return "main/search";
+	}
+
+	
+	
+	
+	
+	public List<ReviewVO> reviewGetData(double isbn13,Model model){
+		  
+		  List<ReviewVO> list = new ArrayList<ReviewVO>();
+		
+		  try{
+		
+
+				
+				ReviewVO rList = newdao.reviewGraphData(isbn13);
+				
+				String data = rList.getContent();
+				
+				int i = 0;
+
+				System.out.println(data);
+				// 꼬꼬마
+				// 명사형으로 자르려고 한다 알말고 여기서
+				// 명사만 자르는 클래스 이름
+				KeywordExtractor ke = new KeywordExtractor();
+				KeywordList kl = ke.extractKeyword(data, true); // 읽은 댓글 전체를 이곳에 넘겨준다.
+
+				for (i = 0; i < kl.size(); i++) {
+					Keyword k = kl.get(i);
+
+					
+						if (k.getCnt() > 10 && k.getString().length() > 1) {
+
+							ReviewVO vo = new ReviewVO();
+							vo.setKeyword(k.getString());
+							vo.setCount(k.getCnt());
+							list.add(vo);
+							
+							System.out.println(k.getString() + ":" + k.getCnt());
+
+						}
+
+					
+
+				}
+				
+			  
+		  }catch(Exception e){
+			   System.out.println(e.getMessage());
+		   }
+	   
+		  
+		  return list;
+		  
+	  }
+	
+	
+	
+	@RequestMapping("main/findsite.do")
+	public String board_find(String fs,String ss,Model model) throws UnsupportedEncodingException{
+		
+		
+		String sbuURL =  URLEncoder.encode(ss, "UTF-8");
+		String search="";
+		if(fs=="aladdin"){
+			
+			fs="http://www.aladin.co.kr/search/wsearchresult.aspx?SearchTarget=All&SearchWord="+sbuURL;
+			search="알라딘";
+			
+		}else if(fs=="interpark"){
+			
+			fs="http://bsearch.interpark.com/dsearch/book.jsp?sch=all&sc.shopNo=&bookblockname=s_main&booklinkname=s_main&bid1=search_auto&bid2=product&bid3=000&bid4=001&query="+sbuURL;
+			search="인터파크";
+			
+		}else if(fs=="yes24"){
+			
+			fs="http://www.yes24.com/searchcorner/Search?keywordAd=&keyword=&domain=ALL&qdomain=%C0%FC%C3%BC&Wcode=001_005&query="+sbuURL;
+			search="예스24";
+			
+		}else{ //kyobo
+			
+			fs="http://www.kyobobook.co.kr/search/SearchCommonMain.jsp?vPstrCategory=TOT&vPstrKeyWord="+sbuURL+"&vPplace=top";
+			search="교보문고";
+			
+	
+		}
+		
+		
+		model.addAttribute("serch",search);
+		model.addAttribute("fs",fs);
+		model.addAttribute("sbuURL",sbuURL);
+		
+		
+		return "main/findsite";
+	}
+	
+}

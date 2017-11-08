@@ -1,0 +1,302 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>메인 페이지</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+
+
+.content1 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#footer-foot {
+    border-top: 1px solid;
+    width: 980px;
+}
+.footer-list li {
+    list-style: none;
+    display: inline;
+}
+.bookslide {
+    padding: 0px;
+}
+
+.feel {
+    padding: 0px;
+   
+}
+
+.well {
+    border: 1px solid;
+    height: 246px;
+}
+
+.left {
+    padding-left: 15px;
+}
+
+.right {
+    padding-right: 15px;
+}
+
+.bookslidename {
+    text-align: center;
+}
+
+
+.movie_img{
+    border: 0px;
+}
+.feel_img{
+width:100%;
+height: 266px;
+}
+.vs{
+text-align: center;
+}
+.bookvs{
+height: 82px;
+}
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <!--******************** header ************************ -->
+        <!-- 상단바 : 타 사이트 링크 및 검색창 -->
+	<!-- <nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<strong><a class="navbar-brand" href="#">BOOKOO</a></strong>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a	href="genredetail.do">분야별</a></li>
+				<li><a	href="#">베스트</a></li>
+				<li><a href="#">추천도서</a></li>
+				<li><a href="#">저자의 서재</a></li>
+				<li><a href="#">신간도서</a></li>
+			</ul>
+			<form class="navbar-form navbar-left">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Search">
+				</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+			<ul class="nav navbar-nav">
+				<li><a	href="#">sing in</a></li>
+				<li><a	href="#">join us</a></li>
+			</ul>
+		</div>
+	</nav> -->
+	<jsp:include page="header.jsp"></jsp:include>
+	<!-- 상단바 끝 -->
+        <!-- ************************** header ************************끝  -->
+<br><br>
+
+        <!-- 책 이미지 4개  -->
+        <div class="row">
+            <div class="col-md-12">
+                <blockquote>누구나 한번쯤 읽었을 요즘 책</blockquote>
+                <div id="Carousel" class="carousel slide">
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#Carousel" data-slide-to="1"></li>
+                        <li data-target="#Carousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="../image/img_book.jpg" alt="Image" style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="../image/img_book.jpg" alt="Image" style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="../image/img_book.jpg" alt="Image" style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="../image/img_book.jpg" alt="Image" style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="../image/img_book.jpg" alt="Image" style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="http://placehold.it/250x250" alt="Image"
+                                        style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="http://placehold.it/250x250" alt="Image"
+                                        style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="http://placehold.it/250x250" alt="Image"
+                                        style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="http://placehold.it/250x250" alt="Image"
+                                        style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="http://placehold.it/250x250" alt="Image"
+                                        style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="http://placehold.it/250x250" alt="Image"
+                                        style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="http://placehold.it/250x250" alt="Image"
+                                        style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+
+                    </div>
+                    <!--.carousel-inner-->
+                    <a data-slide="prev" href="#Carousel" class="left carousel-control"></a>
+                    <a data-slide="next" href="#Carousel"
+                        class="right carousel-control"></a>
+                </div>
+                <!--.Carousel-->
+
+            </div>
+        </div>
+        <br>
+        <!-- 책 이미지 4개  끝-->
+        <!--동영상 책vs책  -->
+        <div class="row">
+            <div class="col-sm-6">
+               
+                    <img src="../image/img_movie.JPG" style="width: 100%;height: 100%">
+               
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="thumbnail movie_img"><img
+                    src="../image/img_book2.jpg" alt="Image"
+                    style="max-width: 100%;"></a>
+                <div class="bookslidename">저자 | 책이름</div>
+            </div>
+
+            <div class="col-sm-3 vs">
+                <div class="bookvs">
+                 <h3>도서 평점</h3>
+                 <img src="../image/img_star.jpg">
+                </div>
+                <div class="bookvs">
+                 <img src="../image/img_vs.jpg">
+                </div>
+                <div class="bookvs">
+                <img src="../image/img_star.jpg">
+                 <h3>영화 평점</h3>
+                </div>
+            </div>
+        </div>
+        <!-- 동영상 책vs책 끝 -->
+        <br> <br>
+        <!--감정 row -->
+        <div class="row">
+            <div class="col-md-2 feel left">
+                <img src="../image/feel_happy.jpg" class="feel_img">
+            </div>
+            <div class="col-md-2 feel" >
+                <img src="../image/feel_sad.jpg" class="feel_img">
+            </div>
+            <div class="col-md-2 feel">
+                <img src="../image/feel_cri.jpg" class="feel_img">
+            </div>
+            <div class="col-md-2 feel">
+                <img src="../image/feel_ang.JPG" class="feel_img">
+            </div>
+            <div class="col-sm-4 feel right">
+                <div class="well"></div>
+            </div>
+        </div>
+        <!--감정 row 끝  -->
+        <!-- 링크 -->
+        <br> <br> <br>
+        <nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<strong><a class="navbar-brand" href="#">BOOKOO</a></strong>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a
+					href="http://www.yes24.com">YES24</a></li>
+				<li><a
+					href="http://www.aladin.co.kr">알라딘</a></li>
+				<li><a
+					href="http://www.kyobobook.co.kr">교보문고</a></li>
+				<li><a
+					href="http://bsearch.interpark.com">인터파크</a></li>
+			</ul>
+		</div>
+	</nav>
+   
+    <!-- 링크끝 -->
+    <!-- container 끝-->
+    <br>
+    <br>
+    <br>
+
+    <!-- footer 시작 -->
+    <jsp:include page="footer.jsp"></jsp:include>
+ </div>
+
+
+
+</body>
+</html> 

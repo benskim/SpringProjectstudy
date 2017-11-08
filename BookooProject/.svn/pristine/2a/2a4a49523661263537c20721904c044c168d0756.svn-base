@@ -1,0 +1,54 @@
+package com.sist.mapred;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+@Component
+public class FeelManager {
+	    @Autowired
+	    private Configuration conf;
+	// 긍정과 부정 % , 워드클라우드 맵리듀스 작업 할 리스트
+			public void hadoopFileDelete()
+		    {
+		    	try
+		    	{
+		    		//Hadoop연결
+		    		FileSystem fs=FileSystem.get(conf);
+		    		if(fs.exists(new Path("/input5/bookreply.txt")))
+		    		{
+		    			fs.delete(new Path("/input5/bookreply.txt"),true);
+		    		}
+		    		if(fs.exists(new Path("/output05")))
+		    		{
+		    			fs.delete(new Path("/output05"),true);
+		    		}
+		    	}catch(Exception ex)
+		    	{
+		    		System.out.println(ex.getMessage());
+		    	}
+		    }
+		    public void copyFromLocal()
+		    {
+		    	try
+		    	{
+		    		FileSystem fs=FileSystem.get(conf);
+		    				fs.copyFromLocalFile(new Path("/home/sist/pj_bookreply/bookreply.txt"),new Path("/input5/bookreply.txt"));
+		    	}catch(Exception ex)
+		    	{
+		    		System.out.println(ex.getMessage());
+		    	}
+		    }
+		    public void copyToLocal()
+		    {
+		    	try
+		    	{
+		    		FileSystem fs=FileSystem.get(conf);
+		    		fs.copyToLocalFile(new Path("/output05/part-r-00000"),new Path("/home/sist/pj_bookreply/bresult"));
+		    	}catch(Exception ex)
+		    	{
+		    		System.out.println(ex.getMessage());
+		    	}
+		    }
+}

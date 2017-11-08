@@ -1,0 +1,74 @@
+package com.sist.main.dao;
+
+public class BookListVO {
+	private String isbn;
+	private String title;
+	private String reviewer;
+	private String publisher;
+	private String price;
+	private String star;
+	private String bimg;
+	private String bookintro;
+	private String bookin;
+	private String pwiter;
+	public String getIsbn() {
+		return isbn;
+	}
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getReviewer() {
+		return reviewer;
+	}
+	public void setReviewer(String reviewer) {
+		this.reviewer = reviewer;
+	}
+	public String getPublisher() {
+		return publisher;
+	}
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	public String getStar() {
+		return star;
+	}
+	public void setStar(String star) {
+		this.star = star;
+	}
+	public String getBimg() {
+		return bimg;
+	}
+	public void setBimg(String bimg) {
+		this.bimg = bimg;
+	}
+	public String getBookintro() {
+		return bookintro;
+	}
+	public void setBookintro(String bookintro) {
+		this.bookintro = bookintro;
+	}
+	public String getBookin() {
+		return bookin;
+	}
+	public void setBookin(String bookin) {
+		this.bookin = bookin;
+	}
+	public String getPwiter() {
+		return pwiter;
+	}
+	public void setPwiter(String pwiter) {
+		this.pwiter = pwiter;
+	}
+}

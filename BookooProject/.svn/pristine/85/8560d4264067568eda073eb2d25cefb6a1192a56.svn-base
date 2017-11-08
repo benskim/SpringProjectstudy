@@ -1,0 +1,226 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>장르, 분야페이지</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<style>
+
+/* Remove the navbar's default rounded borders and increase the bottom margin */
+.navbar {
+	margin-bottom: 50px;
+	border-radius: 0;
+}
+
+/* Remove the jumbotron's default bottom margin */
+.jumbotron {
+	margin-bottom: 0;
+}
+
+#footer-foot {
+	border-top: 1px solid;
+	width: 980px;
+}
+
+.footer-list li {
+	list-style: none;
+	display: inline;
+}
+
+.gen_con {
+	width: 100%;
+	height: 300px;
+	border: 1px solid;
+}
+</style>
+<!-- ajax -->
+<script type="text/javascript">
+function ageCB(a){
+	var obj = document.getElementsByName("ageck");
+	for(var i=0;i<obj.length;i++)
+	{
+		if(obj[i]!=a)
+		{
+			obj[i].checked = false;
+		}
+	}
+};
+
+function themeCB(b){
+	var obj2 = document.getElementsByName("themeck")
+	for(var i=0;i<obj2.length;i++)
+	{
+		if(obj2[i]!=b)
+		{
+			obj2[i].checked = false;
+		}
+	}
+};
+
+$(function(){
+	$('#checkage').click(function(){
+		location.href = "genredetail.do"
+	});
+	$('#checkage1').click(function(){
+		location.href = "genredetail.do"
+	});
+	$('#checkage2').click(function(){
+		location.href = "genredetail.do"
+	});
+	$('#checkage3').click(function(){
+		location.href = "genredetail.do"
+	});
+	$('#checkage4').click(function(){
+		location.href = "genredetail.do"
+	});
+	$('#checkage5').click(function(){
+		location.href = "genredetail.do"
+	});
+	$('#checkage6').click(function(){
+		location.href = "genredetail.do"
+	});
+	$('#checktm').click(function(){
+		location.href = "genredetail.do"
+	});
+	$('#checktm1').click(function(){
+		location.href = "genredetail.do"
+	});
+	$('#checktm2').click(function(){
+		location.href = "genredetail.do"
+	});
+	$('#checktm3').click(function(){
+		location.href = "genredetail.do"
+	});
+	$('#checktm4').click(function(){
+		location.href = "genredetail.do"
+	});
+	$('#checktm5').click(function(){
+		location.href = "genredetail.do"
+	});
+	$('#checktm6').click(function(){
+		location.href = "genredetail.do"
+	});
+	$('#checktm7').click(function(){
+		location.href = "genredetail.do"
+	});
+	$('#checktm8').click(function(){
+		location.href = "genredetail.do"
+	});
+});
+
+$(document).ready(function(){
+	
+	$.ajax({
+		type:'POST',
+		url:'onechoice.do',
+		async:false,
+		success:function(response){
+		$('#changelist').html();	
+			
+		}
+	});//ajax end
+});
+</script>
+</head>
+<body>
+
+	<div class="container">
+
+		<!-- 상단바 : 타 사이트 링크 및 검색창 -->
+		<jsp:include page="header.jsp"></jsp:include>
+		<!-- 상단바 끝 -->
+		<br>
+		<br>
+	<div class="container">
+		<div class="row">
+			<h2>연령별</h2>
+			<p>연 Check</p>
+			<form id="groupage" method="post" action="main/genredetail.do">
+				<label class="checkbox-inline"> <input type="checkbox"	id="checkage" name="ageck" onclick="ageCB(this)" value="7">유아(7세 이하)
+				</label>
+				 <label class="checkbox-inline"> <input type="checkbox"	id="checkage1" name="ageck" onclick="ageCB(this)" value="13">초등(8~13세 이하)
+				</label> 
+				<label class="checkbox-inline"> <input type="checkbox"	id="checkage2" name="ageck" onclick="ageCB(this)" value="19">청소년(14~19세)
+				</label>
+				<label class="checkbox-inline"> <input type="checkbox"	id="checkage3" name="ageck" onclick="ageCB(this)" value="20">20대
+				</label>
+				<label class="checkbox-inline"> <input type="checkbox"	id="checkage4" name="ageck" onclick="ageCB(this)" value="30">30대
+				</label>
+				<label class="checkbox-inline"> <input type="checkbox"	id="checkage5" name="ageck" onclick="ageCB(this)" value="">50대
+				</label>
+				<label class="checkbox-inline"> <input type="checkbox"	id="checkage6" name="ageck" onclick="ageCB(this)" value="">60대
+				</label>
+				<input type="submit">
+			</form>
+			<br>
+	
+			<p>주제 check</p>
+			<form id="grouptheme" method="post" action="main/genredetail.do">
+				<label class="checkbox-inline"> <input type="checkbox" id="checktm" name="themeck" onclick="themeCB(this)" value="">철학</label>
+				<label class="checkbox-inline"> <input type="checkbox" id="checktm1" name="themeck" onclick="themeCB(this)" value="">종교</label>
+				<label class="checkbox-inline"> <input type="checkbox" id="checktm2" name="themeck" onclick="themeCB(this)" value="">사회과학</label>
+				<label class="checkbox-inline"> <input type="checkbox" id="checktm3" name="themeck" onclick="themeCB(this)" value="">자연과학</label>
+				<label class="checkbox-inline"> <input type="checkbox" id="checktm4" name="themeck" onclick="themeCB(this)" value="">기술과학</label>
+				<label class="checkbox-inline"> <input type="checkbox" id="checktm5" name="themeck" onclick="themeCB(this)" value="">예술</label> 
+				<label class="checkbox-inline"> <input type="checkbox" id="checktm6" name="themeck" onclick="themeCB(this)" value="">언어</label>
+				<label class="checkbox-inline"> <input type="checkbox" id="checktm7" name="themeck" onclick="themeCB(this)" value="">문학</label>
+				<label class="checkbox-inline"> <input type="checkbox" id="checktm8" name="themeck" onclick="themeCB(this)" value="">역사</label>
+			</form>
+		</div>
+</div>
+		<hr />
+		<div class="row text-center">
+			<form class="form-inline">
+				<select class="form-control" id="sel1">
+					<option>가격순</option>
+					<option>출간일순</option>
+					<option>평점순</option>
+				</select> <input type="email" class="form-control" size="30" placeholder="">
+				<button type="button" class="btn btn-danger">검색</button>
+			</form>
+		</div>
+		<hr/>
+		<!-- 여기서 부터 장르 리스트 -->
+		<div class="container">
+			<div class="row">
+				<c:forEach var="vo" items="${rlist }" begin="0" end="12" varStatus="status">
+				<div class="col-sm-2">${vo.age } / ${vo.bookname }
+					<div class="gen_con"><img src="${imglist[status.index]}" style="width:100px; height: 100px;"></div>
+				</div>
+				</c:forEach>
+			</div>
+		</div>
+		<!-- 장르리스트 끝 -->
+		<!-- 링크 -->
+		<br> <br> <br>
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<strong><a class="navbar-brand" href="#">BOOKOO</a></strong>
+				</div>
+				<ul class="nav navbar-nav">
+					<li><a href="http://www.yes24.com">YES24</a></li>
+					<li><a href="http://www.aladin.co.kr">알라딘</a></li>
+					<li><a href="http://www.kyobobook.co.kr">교보문고</a></li>
+					<li><a href="http://bsearch.interpark.com">인터파크</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- 링크끝 -->
+		<!-- container 끝-->
+		<br> <br> <br>
+
+		<!-- footer 시작 -->
+		<jsp:include page="footer.jsp"></jsp:include>
+	</div>
+</body>
+</html>

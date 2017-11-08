@@ -1,0 +1,28 @@
+package com.sist.writerdao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Repository;
+
+
+@Repository
+public class WriterDAO {
+	@Autowired	
+	private MongoTemplate mt;
+		
+
+	
+	public void writerInsert(WriterVO vo){
+		mt.insert(vo,"writer_top300");
+	}
+	
+	
+	public List<WriterVO> writerAllData(){
+		Query query = new Query();
+		return mt.find(query, WriterVO.class,"writer_top300");
+	//	===========> controller
+	}
+}

@@ -1,0 +1,51 @@
+package com.sist.main.newsmgr;
+
+import java.net.*;
+import java.util.*;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.sist.main.news.dao.NewsDAO;
+import com.sist.main.news.dao.NewsVO;
+
+@Component
+public class NewsManager {
+	@Autowired
+	private NewsDAO dao;
+	public static void main(String[] args)
+	{
+		NewsManager nm = new NewsManager();
+		nm.newsData("[신간]");
+	}
+	
+	
+	public void newsData(String data)
+	{
+		try
+		{
+			JAXBContext jc = JAXBContext.newInstance(Rss.class);
+			String strUrl="http://newssearch.naver.com/search.naver?where=rss&query="+URLEncoder.encode(data,"UTF-8");
+			URL url = new URL(strUrl);
+			Unmarshaller un = jc.createUnmarshaller();
+			Rss rss = (Rss)un.unmarshal(url);
+			List<Item> list = rss.getChannel().getItem();
+			for(Item i : list)
+			{
+				NewsVO vo = new NewsVO();
+				vo.setTitle(i.getTitle());
+				vo.setLink(i.getLink());
+				vo.setDescription(i.getDescription());
+				System.out.println(vo.getTitle());
+				System.out.println(vo.getLink());
+				System.out.println(vo.getDescription());
+				//dao.newsInsert(vo);
+			}
+		}catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+	}
+}

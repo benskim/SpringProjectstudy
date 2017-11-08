@@ -1,0 +1,27 @@
+package com.sist.rankdao;
+
+public class RankVO {
+	private String title;
+	private float isbn;
+	private int totloan;
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}	
+	public float getIsbn() {
+		return isbn;
+	}
+	public void setIsbn(float isbn) {
+		this.isbn = isbn;
+	}
+	public int getTotloan() {
+		return totloan;
+	}
+	public void setTotloan(int totloan) {
+		this.totloan = totloan;
+	}
+	
+	
+}

@@ -1,0 +1,70 @@
+package com.sist.rankdao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.BasicQuery;
+import org.springframework.stereotype.Repository;
+
+import com.sist.mongo.BookRankVO;
+import com.sist.mongo.BookRentVO;
+//랭크 테이블 만들기
+@Repository
+public class RankDAO {
+	@Resource(name="mt")
+	private MongoTemplate mt;	
+	public void MakeBookRank(int cate){
+		List<BookRentVO> list=new ArrayList<BookRentVO>();
+		BasicQuery query=new BasicQuery("{category:"+cate+"}");
+		
+		list=mt.find(query,BookRentVO.class,"bookRent");
+		for(BookRentVO vo:list){
+			//int loeancount=vo.getLoan_count();
+			//System.out.println(loeancount);
+			System.out.println(vo.getBookname());
+		}		
+	}
+	public List<String> rentbookDistinct(int category){
+		/*Criteria criteria = new Criteria();
+		criteria.where("category").is(category);
+		Query query=new Query();
+		query.addCriteria(criteria);*/
+		BasicQuery query=new BasicQuery("{category:"+category+"}");
+		List<String> list = mt.getCollection("bookRent").distinct("bookname",query.getQueryObject());
+		return list;
+	}
+	public double oneBookLoanTotal(int category,String bookname){
+		double loansum=0.0;
+		BasicQuery query=new BasicQuery("{bookname:\""+bookname+"\"}");
+		List<BookRentVO> list=new ArrayList<BookRentVO>();
+		list=mt.find(query, BookRentVO.class,"bookRent");
+		for(BookRentVO vo:list){
+			loansum+=vo.getLoan_count();
+		}
+		return loansum;
+	}
+	public void makeBookRanktable(){
+		int category;
+		BookRankVO vo=new BookRankVO();
+		for(category=1;category<=9;category++){
+			List<String> list=new ArrayList<String>();
+			list=rentbookDistinct(category);
+			//System.out.println("start");
+			System.out.println(list.size());
+			for(int i=0;i<list.size();i++){
+				//System.out.println(list.get(i));
+				double totloan_count=oneBookLoanTotal(category, list.get(i));
+				System.out.println(category+"||"+list.get(i)+"||"+totloan_count);
+				if(totloan_count>4000){
+					vo.setCategory(category);
+					vo.setBookname(list.get(i).replaceAll("\"", ""));
+					vo.setTotloan_count(totloan_count);
+					mt.insert(vo,"loanrank");
+				}
+			}	
+		}
+	}
+}

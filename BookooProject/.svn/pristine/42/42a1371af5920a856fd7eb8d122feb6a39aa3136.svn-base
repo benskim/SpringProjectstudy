@@ -1,0 +1,29 @@
+package com.sist.bookoo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MainController {
+	@RequestMapping("main/main.do")
+	public String main_main(){
+		return "main/main";
+	}
+	@RequestMapping("main/genredetail.do")
+	public String main_genre(){
+		return "main/genredetail";
+	}
+	@RequestMapping("main/recomend.do")
+	public String main_recomend(){
+		return "main/recomend";
+	}
+	@RequestMapping("main/newbook.do")
+	public String main_newbook(){
+		return "main/newbook";
+	}
+	@RequestMapping("main/best.do")
+	public String main_best(){
+		return "main/recomend";
+	}
+
+}

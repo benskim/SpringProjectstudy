@@ -1,0 +1,435 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>베스트 페이지</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='//code.jquery.com/jquery-1.8.3.js'></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker3.min.css">
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="/js/bootstrap-datepicker.kr.js" charset="UTF-8"></script>
+
+    <script type='text/javascript'>
+    $(function(){
+        $('.input-group.date').datepicker({
+            calendarWeeks: false,
+            todayHighlight: true,
+            autoclose: true,
+            format: "yyyy/mm/dd",
+            language: "kr"
+        });
+    });
+    </script>
+<style type="text/css">
+#footer-foot {
+    border-top: 1px solid;
+    width: 980px;
+}
+.footer-list li {
+    list-style: none;
+    display: inline;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- 상단바 : 타 사이트 링크 및 검색창 -->
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<strong><a class="navbar-brand" href="#">BOOKOO</a></strong>
+			</div>
+			<ul class="nav navbar-nav">
+			<li><a
+					href="http://www.yes24.com">YES24</a></li>
+				<li><a
+					href="http://www.aladin.co.kr">알라딘</a></li>
+				<li><a
+					href="http://www.kyobobook.co.kr">교보문고</a></li>
+				<li><a
+					href="http://bsearch.interpark.com">인터파크</a></li>
+			</ul>
+			<form class="navbar-form navbar-left">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Search">
+				</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+	</nav>
+	<!-- 상단바 끝 -->
+     
+        <br> <br>
+        <!--***************************header ********************************************8  -->
+  <h2>베스트</h2>  
+  <ul class="nav nav-pills">
+    <li class="active"><a data-toggle="pill" href="#home">종합</a></li>
+    <li><a data-toggle="pill" href="#menu1">소설</a></li>
+    <li><a data-toggle="pill" href="#menu2">시/에세이</a></li>
+    <li><a data-toggle="pill" href="#menu3">비즈니스와 경제</a></li>
+    <li><a data-toggle="pill" href="#menu4">자기관리</a></li>
+    <li><a data-toggle="pill" href="#menu5">어린이</a></li>
+    <li><a data-toggle="pill" href="#menu6">유아</a></li>
+    <li><a data-toggle="pill" href="#menu7">인문</a></li>
+    <li><a data-toggle="pill" href="#menu8">역사와 문화</a></li>
+    <li><a data-toggle="pill" href="#menu9">국어와 외국어</a></li>
+    <li><a data-toggle="pill" href="#menu10">가정과 생활</a></li>
+    <li><a data-toggle="pill" href="#menu11">인물</a></li>
+  </ul>
+ <div class="container">
+        <br/>
+        <div class="input-group date">
+            <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        </div>
+    </div>
+
+  
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>종합</h3>
+      <div>
+      <p>1</p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>언어의 온도</p>
+           <img src="언어의온도.jpg" class="img" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div>
+      <p>2</p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>언어의 온도</p>
+           <img src="언어의온도.jpg" class="img" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div>
+      <p>1</p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>언어의 온도</p>
+           <img src="언어의온도.jpg" class="img" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div>
+      <p>1</p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>언어의 온도</p>
+           <img src="언어의온도.jpg" class="img" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>소설</h3>
+      <p>1</p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>John</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>시/에세이</h3>
+      <p>1</p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>John</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>비즈니스와 경제</h3>
+      <p>1</p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>John</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="menu4" class="tab-pane fade">
+      <h3>자기관리</h3>
+     <p>1</p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>John</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="menu5" class="tab-pane fade">
+      <h3>어린이</h3>
+     <p>1</p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>John</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div id="menu6" class="tab-pane fade">
+      <h3>유아</h3>
+      <p>1</p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>John</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="menu7" class="tab-pane fade">
+      <h3>인물</h3>
+     <p>1</p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>John</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="menu8" class="tab-pane fade">
+      <h3>역사와 문화</h3>
+      <p>1</p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>John</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="menu9" class="tab-pane fade">
+      <h3>국어와 외국어</h3>
+     <p>1</p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>John</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="menu10" class="tab-pane fade">
+      <h3>가정과 생활</h3>
+      <p>1</p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>John</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="menu11" class="tab-pane fade">
+      <h3>인물</h3>
+      <p>1</p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>John</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- 링크 -->
+        <br> <br> <br>
+        <nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<strong><a class="navbar-brand" href="#">BOOKOO</a></strong>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a
+					href="http://www.yes24.com">YES24</a></li>
+				<li><a
+					href="http://www.aladin.co.kr">알라딘</a></li>
+				<li><a
+					href="http://www.kyobobook.co.kr">교보문고</a></li>
+				<li><a
+					href="http://bsearch.interpark.com">인터파크</a></li>
+			</ul>
+		</div>
+	</nav>
+   
+    <!-- 링크끝 -->
+    <!-- container 끝-->
+    <br>
+    <br>
+    <br>
+
+    <!-- footer 시작 -->
+    <footer class="container-fluid text-center" id="footer-foot">
+
+        <div class="footer">
+            <ul class="footer-list">
+                <li><a class="NPI=a:agreement"
+                    href="http://www.naver.com/rules/service.html" target="_blank">이용약관</a>
+                    |</li>
+                <li><a class="NPI=a:privacy"
+                    href="http://www.naver.com/rules/privacy.html" target="_blank"><strong>개인정보처리방침</strong></a>
+                    |</li>
+                <li><a class="NPI=a:disclaimer"
+                    href="http://www.naver.com/rules/disclaimer.html" target="_blank">책임의
+                        한계와 법적고지</a> |</li>
+                <li><a class="NPI=a:publisher"
+                    href="http://publisher.naver.com/" target="_blank">출판사 제휴안내</a> |</li>
+                <li><a class="NPI=a:library" href="/guide/nl/index.nhn"
+                    target="_blank">도서관안내</a> |</li>
+                <li><a class="NPI=a:help"
+                    href="https://help.naver.com/support/service/main.nhn?serviceNo=702"
+                    target="_blank">책 고객센터</a> |</li>
+            </ul>
+            <p class="info">
+                네이버책은 통신판매중개자로서 통신판매의 당사자가 아니며, 상품 주문, 배송 및 환불의 의무와 책임은 각 판매업체에
+                있습니다.<br> 본 콘텐츠의 저작권은 저자 또는 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라
+                법적책임을 질 수 있습니다.<br> 외부 저작권자가 제공한 콘텐츠는 네이버의 입장과 다를 수 있습니다.
+            </p>
+            <p class="info">
+                사업자등록번호 : 220-81-62517<span>통신판매업 신고번호</span> : 경기성남 제 2006 - 692호<span>대표이사
+                    : 한성숙</span><span><a
+                    href="http://www.ftc.go.kr/info/bizinfo/communicationList.jsp">사업자등록정보
+                        확인</a></span><br> 주소 : 경기도 성남시 분당구 불정로 6 네이버 그린팩토리 463-867<span>대표전화
+                    : 1588-3820</span>
+            </p>
+            <address>
+                <a href="http://www.navercorp.com/" target="_blank"
+                    class="logo N=a:fot.nhn">NAVER</a> Copyright © <a
+                    class="N=a:fot.nhncorp" href="http://www.navercorp.com/"
+                    target="_blank"><strong>NAVER Corp.</strong></a> All Rights
+                Reserved.
+            </address>
+        </div>
+
+    </footer>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,89 @@
+package com.sist.bookoo;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import com.sist.main.dao.BookListDAO;
+import com.sist.main.dao.BookListVO;
+import com.sist.mongo.BookRentVO;
+import com.sist.newbookdao.NewBooklistDAO;
+import com.sist.newbookdao.NewBooklistVO;
+import com.sist.rankdao.RankDAO;
+
+
+@Controller
+public class MainController {
+
+	@Autowired
+	private BookListDAO bldao;
+	@Autowired
+	private RankDAO rankdao;
+	@Autowired
+	private NewBooklistDAO newdao;
+
+	@RequestMapping("main/main.do")
+	public String main_main(Model model){
+		List<BookListVO> list = bldao.mainlist();
+		List<BookListVO> list2 = bldao.mainlist2();
+		List<BookListVO> list3 = bldao.mainlist3();
+			
+		model.addAttribute("list", list);
+		model.addAttribute("list2",list2);
+		model.addAttribute("list3", list3);
+		return "main/main";
+	}
+	@RequestMapping("main/genredetail.do")
+	public String main_genre(){
+		return "main/genredetail";
+	}
+	@RequestMapping("main/recomend.do")
+	public String main_recomend(Model model){
+		return "main/recomend";
+	}
+	@RequestMapping("main/newbook.do")
+	public String main_newbook(String page,Model model){
+		if(page==null)
+			page="1";
+		int curpage=Integer.parseInt(page);
+		List<NewBooklistVO> list=newdao.newbookAllData(curpage);
+		int totalpage=newdao.NewsTotalPage();
+		model.addAttribute("list",list);
+		model.addAttribute("totalpate",totalpage);
+		
+		return "main/newbook";
+	}
+	@RequestMapping("main/best.do")//랭크 테이블 만드는 요청
+	public void main_best(){		
+		rankdao.makeBookRanktable();
+	}
+	@RequestMapping("main/best1.do")
+	public String main_bestpage(String cate){
+		int category;
+		if(cate==null){
+			category=1;
+		}else{
+			category=Integer.parseInt(cate);
+		}		
+		rankdao.bestByCategory(category);
+		return "main/best";
+	}
+	@RequestMapping("main/detail.do")
+	public String main_detain(double isbn){
+		
+		return "main/detail";
+	}
+	@RequestMapping("main/writer.do")
+	public String main_writer(){
+		return "main/writer";
+	}
+	@RequestMapping("main/search.do")
+	public String main_search(){
+		return "main/search";
+	}
+
+}

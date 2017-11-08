@@ -1,0 +1,64 @@
+package com.sist.newbookdao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.BasicQuery;
+
+import org.springframework.stereotype.Repository;
+
+import com.sist.main.dao.BookListVO;
+import com.sist.mongo.ReviewVO;
+
+import java.util.*;
+@Repository
+public class NewBooklistDAO implements bookooData{
+	
+	@Autowired
+	private MongoTemplate mt;
+	
+	public List<NewBooklistVO> newbookAllData(int page){
+		
+		List<NewBooklistVO> list=new ArrayList<NewBooklistVO>();
+		int rowSize=12;
+		int skip=(rowSize*page)-(rowSize);				
+		BasicQuery query=new BasicQuery("{\"pdate\":{$gt:\"2017-07-01\"}}");//BasicQuery는 몽고디비 에서 사용하는 쿼리문
+		query.skip(skip).limit(rowSize);
+		query.with(new Sort(Sort.Direction.DESC,"pdate"));	//그냥 Query는 라이브러리 같이 자바에서 쿼리르 보내는것
+		return mt.find(query, NewBooklistVO.class, "booklist");
+		
+	}
+	
+	public int NewsTotalPage(){
+
+		
+		BasicQuery query=new BasicQuery("{\"pdate\":{$gt:\"2017-03-01\"}}");
+
+		return (int)Math.ceil(mt.count(query,"booklist")/12.0);
+		
+	}
+	
+	public BookListVO bookDetailData(double isbn){
+		
+		BasicQuery query = new BasicQuery("{isbn:"+isbn+"}");
+		
+		BookListVO vo = mt.findOne(query, BookListVO.class,"booklist");
+		
+		
+		return vo;
+	}
+	
+	
+	public ReviewVO reviewGraphData(double isbn){
+		
+			BasicQuery query = new BasicQuery("{isbn:"+isbn+"}");
+		
+			ReviewVO vo = mt.findOne(query, ReviewVO.class,"Review");
+		
+		
+		return vo;
+		
+	}
+	
+	
+}

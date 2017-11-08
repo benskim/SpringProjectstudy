@@ -1,0 +1,344 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>메인 페이지</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+
+
+.content1 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#footer-foot {
+    border-top: 1px solid;
+    width: 980px;
+}
+.footer-list li {
+    list-style: none;
+    display: inline;
+}
+.bookslide {
+    padding: 0px;
+}
+
+.feel {
+    padding: 0px;
+   
+}
+
+.well {
+    border: 1px solid;
+    height: 246px;
+}
+
+.left {
+    padding-left: 15px;
+}
+
+.right {
+    padding-right: 15px;
+}
+
+.bookslidename {
+    text-align: center;
+}
+
+
+.movie_img{
+    border: 0px;
+}
+.feel_img{
+width:100%;
+height: 266px;
+}
+.vs{
+text-align: center;
+}
+.bookvs{
+height: 82px;
+}
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <!--******************** header ************************ -->
+        <!-- 상단바 : 타 사이트 링크 및 검색창 -->
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<strong><a class="navbar-brand" href="#">BOOKOO</a></strong>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a
+					href="http://www.yes24.com">YES24</a></li>
+				<li><a
+					href="http://www.aladin.co.kr">알라딘</a></li>
+				<li><a
+					href="http://www.kyobobook.co.kr">교보문고</a></li>
+				<li><a
+					href="http://bsearch.interpark.com">인터파크</a></li>
+			</ul>
+			<form class="navbar-form navbar-left">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Search">
+				</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+	</nav>
+	<!-- 상단바 끝 -->
+        <!-- ************************** header ************************끝  -->
+<br><br>
+
+        <!-- 책 이미지 4개  -->
+        <div class="row">
+            <div class="col-md-12">
+                <blockquote>누구나 한번쯤 읽었을 요즘 책</blockquote>
+                <div id="Carousel" class="carousel slide">
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#Carousel" data-slide-to="1"></li>
+                        <li data-target="#Carousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="../image/img_book.jpg" alt="Image" style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="../image/img_book.jpg" alt="Image" style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="../image/img_book.jpg" alt="Image" style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="../image/img_book.jpg" alt="Image" style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="../image/img_book.jpg" alt="Image" style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="http://placehold.it/250x250" alt="Image"
+                                        style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="http://placehold.it/250x250" alt="Image"
+                                        style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="http://placehold.it/250x250" alt="Image"
+                                        style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="http://placehold.it/250x250" alt="Image"
+                                        style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="http://placehold.it/250x250" alt="Image"
+                                        style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="http://placehold.it/250x250" alt="Image"
+                                        style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                                <div class="col-md-3 bookslide">
+                                    <a href="#" class="thumbnail"><img
+                                        src="http://placehold.it/250x250" alt="Image"
+                                        style="max-width: 100%;"></a>
+                                    <div class="bookslidename">저자 | 책이름</div>
+                                </div>
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+
+                    </div>
+                    <!--.carousel-inner-->
+                    <a data-slide="prev" href="#Carousel" class="left carousel-control"></a>
+                    <a data-slide="next" href="#Carousel"
+                        class="right carousel-control"></a>
+                </div>
+                <!--.Carousel-->
+
+            </div>
+        </div>
+        <br>
+        <!-- 책 이미지 4개  끝-->
+        <!--동영상 책vs책  -->
+        <div class="row">
+            <div class="col-sm-6">
+               
+                    <img src="../image/img_movie.JPG" style="width: 100%;height: 100%">
+               
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="thumbnail movie_img"><img
+                    src="../image/img_book2.jpg" alt="Image"
+                    style="max-width: 100%;"></a>
+                <div class="bookslidename">저자 | 책이름</div>
+            </div>
+
+            <div class="col-sm-3 vs">
+                <div class="bookvs">
+                 <h3>도서 평점</h3>
+                 <img src="../image/img_star.jpg">
+                </div>
+                <div class="bookvs">
+                 <img src="../image/img_vs.jpg">
+                </div>
+                <div class="bookvs">
+                <img src="../image/img_star.jpg">
+                 <h3>영화 평점</h3>
+                </div>
+            </div>
+        </div>
+        <!-- 동영상 책vs책 끝 -->
+        <br> <br>
+        <!--감정 row -->
+        <div class="row">
+            <div class="col-md-2 feel left">
+                <img src="../image/feel_happy.jpg" class="feel_img">
+            </div>
+            <div class="col-md-2 feel" >
+                <img src="../image/feel_sad.jpg" class="feel_img">
+            </div>
+            <div class="col-md-2 feel">
+                <img src="../image/feel_cri.jpg" class="feel_img">
+            </div>
+            <div class="col-md-2 feel">
+                <img src="../image/feel_ang.JPG" class="feel_img">
+            </div>
+            <div class="col-sm-4 feel right">
+                <div class="well"></div>
+            </div>
+        </div>
+        <!--감정 row 끝  -->
+        <!-- 링크 -->
+        <br> <br> <br>
+        <nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<strong><a class="navbar-brand" href="#">BOOKOO</a></strong>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a
+					href="http://www.yes24.com">YES24</a></li>
+				<li><a
+					href="http://www.aladin.co.kr">알라딘</a></li>
+				<li><a
+					href="http://www.kyobobook.co.kr">교보문고</a></li>
+				<li><a
+					href="http://bsearch.interpark.com">인터파크</a></li>
+			</ul>
+		</div>
+	</nav>
+   
+    <!-- 링크끝 -->
+    <!-- container 끝-->
+    <br>
+    <br>
+    <br>
+
+    <!-- footer 시작 -->
+    <footer class="container-fluid text-center" id="footer-foot">
+
+        <div class="footer">
+            <ul class="footer-list">
+                <li><a class="NPI=a:agreement"
+                    href="http://www.naver.com/rules/service.html" target="_blank">이용약관</a>
+                    |</li>
+                <li><a class="NPI=a:privacy"
+                    href="http://www.naver.com/rules/privacy.html" target="_blank"><strong>개인정보처리방침</strong></a>
+                    |</li>
+                <li><a class="NPI=a:disclaimer"
+                    href="http://www.naver.com/rules/disclaimer.html" target="_blank">책임의
+                        한계와 법적고지</a> |</li>
+                <li><a class="NPI=a:publisher"
+                    href="http://publisher.naver.com/" target="_blank">출판사 제휴안내</a> |</li>
+                <li><a class="NPI=a:library" href="/guide/nl/index.nhn"
+                    target="_blank">도서관안내</a> |</li>
+                <li><a class="NPI=a:help"
+                    href="https://help.naver.com/support/service/main.nhn?serviceNo=702"
+                    target="_blank">책 고객센터</a> |</li>
+            </ul>
+            <p class="info">
+                네이버책은 통신판매중개자로서 통신판매의 당사자가 아니며, 상품 주문, 배송 및 환불의 의무와 책임은 각 판매업체에
+                있습니다.<br> 본 콘텐츠의 저작권은 저자 또는 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라
+                법적책임을 질 수 있습니다.<br> 외부 저작권자가 제공한 콘텐츠는 네이버의 입장과 다를 수 있습니다.
+            </p>
+            <p class="info">
+                사업자등록번호 : 220-81-62517<span>통신판매업 신고번호</span> : 경기성남 제 2006 - 692호<span>대표이사
+                    : 한성숙</span><span><a
+                    href="http://www.ftc.go.kr/info/bizinfo/communicationList.jsp">사업자등록정보
+                        확인</a></span><br> 주소 : 경기도 성남시 분당구 불정로 6 네이버 그린팩토리 463-867<span>대표전화
+                    : 1588-3820</span>
+            </p>
+            <address>
+                <a href="http://www.navercorp.com/" target="_blank"
+                    class="logo N=a:fot.nhn">NAVER</a> Copyright © <a
+                    class="N=a:fot.nhncorp" href="http://www.navercorp.com/"
+                    target="_blank"><strong>NAVER Corp.</strong></a> All Rights
+                Reserved.
+            </address>
+        </div>
+
+    </footer>
+
+
+
+
+
+
+</body>
+</html> 

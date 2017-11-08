@@ -1,0 +1,53 @@
+package com.sist.bookoo;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sist.newbookdao.NewBooklistDAO;
+import com.sist.newbookdao.NewBooklistVO;
+
+@Controller
+public class MainController {
+	@Autowired
+	private NewBooklistDAO newdao;
+	@RequestMapping("main/main.do")
+	public String main_main(){
+		return "main/main";
+	}
+	@RequestMapping("main/genredetail.do")
+	public String main_genre(){
+		return "main/genredetail";
+	}
+	@RequestMapping("main/recomend.do")
+	public String main_recomend(Model model){
+		return "main/recomend";
+	}
+	@RequestMapping("main/newbook.do")
+	public String main_newbook(String page,Model model){
+		List<NewBooklistVO> list=newdao.newbookAllData();
+		model.addAttribute("list",list);
+		
+		return "main/newbook";
+	}
+	@RequestMapping("main/best.do")
+	public String main_best(){
+		return "main/best";
+	}
+	@RequestMapping("main/detail.do")
+	public String main_detain(){
+		return "main/detail";
+	}
+	@RequestMapping("main/writer.do")
+	public String main_writer(){
+		return "main/writer";
+	}
+	@RequestMapping("main/search.do")
+	public String main_search(){
+		return "main/search";
+	}
+
+}
